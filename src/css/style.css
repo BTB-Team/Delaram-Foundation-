@@ -1,0 +1,633 @@
+/*============== project global styles ==============*/
+/* =========================================================
+   DELARAM FOUNDATION — PROFESSIONAL DESIGN SYSTEM
+   Version: 2.0
+   Supports:
+   - RTL / LTR
+   - Persian / English
+   - Accessibility
+   - Fluid Typography
+   - Responsive Layout
+   - Design Tokens
+========================================================= */
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+/*
+ENGLISH:
+- Inter
+- Poppins
+
+PERSIAN:
+- Vazirmatn
+
+IMPORT:
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+*/
+
+
+/* =========================================================
+   ROOT TOKENS
+========================================================= */
+
+:root {
+
+    /* =====================================================
+       BRAND COLORS
+    ===================================================== */
+  
+    --primary-50: #EEF4F9;
+    --primary-100: #D8E6F1;
+    --primary-200: #B8D0E3;
+    --primary-300: #8FB1CC;
+    --primary-400: #5F8EB0;
+    --primary-500: #163A5F;
+    --primary-600: #0F2C4A;
+    --primary-700: #0A1E33;
+    --primary-800: #061321;
+    --primary-900: #030A12;
+  
+    /* =====================================================
+       ACCENT COLORS
+    ===================================================== */
+  
+    --accent-pink-50: #FFF0F6;
+    --accent-pink-100: #FFD8E8;
+    --accent-pink-200: #FFB3D1;
+    --accent-pink-300: #FF85B3;
+    --accent-pink-400: #F06292;
+    --accent-pink-500: #E84D8A;
+    --accent-pink-600: #C93A72;
+    --accent-pink-700: #A52B5C;
+  
+    /* =====================================================
+       NEUTRAL COLORS
+    ===================================================== */
+  
+    --white: #FFFFFF;
+  
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1E293B;
+    --gray-900: #0F172A;
+  
+    /* =====================================================
+       SEMANTIC COLORS
+    ===================================================== */
+  
+    --success-50: #F0FDF4;
+    --success-500: #16A34A;
+    --success-700: #166534;
+  
+    --warning-50: #FFFBEB;
+    --warning-500: #F59E0B;
+    --warning-700: #B45309;
+  
+    --error-50: #FEF2F2;
+    --error-500: #DC2626;
+    --error-700: #991B1B;
+  
+    --info-50: #EFF6FF;
+    --info-500: #2563EB;
+    --info-700: #1D4ED8;
+  
+    /* =====================================================
+       SURFACE COLORS
+    ===================================================== */
+  
+    --background: var(--white);
+    --surface-primary: var(--white);
+    --surface-secondary: var(--gray-50);
+    --surface-tertiary: var(--gray-100);
+  
+    /* =====================================================
+       TEXT COLORS
+    ===================================================== */
+  
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --text-muted: var(--gray-500);
+    --text-white: var(--white);
+  
+    /* =====================================================
+       BORDER COLORS
+    ===================================================== */
+  
+    --border-light: var(--gray-200);
+    --border-medium: var(--gray-300);
+  
+    /* =====================================================
+       TYPOGRAPHY
+    ===================================================== */
+  
+    --font-fa: 'Vazirmatn', sans-serif;
+    --font-en: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+  
+    /* =====================================================
+       FLUID TYPOGRAPHY
+    ===================================================== */
+  
+    --fs-display: clamp(3rem, 6vw, 5.5rem);
+    --fs-h1: clamp(2.5rem, 5vw, 4.5rem);
+    --fs-h2: clamp(2rem, 4vw, 3.5rem);
+    --fs-h3: clamp(1.75rem, 3vw, 2.5rem);
+    --fs-h4: clamp(1.5rem, 2vw, 2rem);
+    --fs-h5: clamp(1.25rem, 1.5vw, 1.5rem);
+  
+    --fs-body-lg: 1.125rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+  
+    /* =====================================================
+       LINE HEIGHTS
+    ===================================================== */
+  
+    --lh-heading: 1.2;
+    --lh-body-en: 1.7;
+    --lh-body-fa: 2;
+  
+    /* =====================================================
+       SPACING SYSTEM
+    ===================================================== */
+  
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+  
+    /* =====================================================
+       BORDER RADIUS
+    ===================================================== */
+  
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius-full: 999px;
+  
+    /* =====================================================
+       SHADOWS
+    ===================================================== */
+  
+    --shadow-sm:
+      0 1px 2px rgba(15, 23, 42, 0.04);
+  
+    --shadow-md:
+      0 8px 24px rgba(15, 23, 42, 0.06);
+  
+    --shadow-lg:
+      0 20px 48px rgba(15, 23, 42, 0.10);
+  
+    /* =====================================================
+       TRANSITIONS
+    ===================================================== */
+  
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+  
+    /* =====================================================
+       CONTAINER WIDTHS
+    ===================================================== */
+  
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+  
+  }
+  
+  
+  /* =========================================================
+     RESET
+  ========================================================= */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+  
+  body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-en);
+    line-height: var(--lh-body-en);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  
+  /* =========================================================
+     LANGUAGE SYSTEM
+  ========================================================= */
+  
+  html[lang="fa"] body {
+    font-family: var(--font-fa);
+    line-height: var(--lh-body-fa);
+  }
+  
+  html[lang="en"] body {
+    font-family: var(--font-en);
+    line-height: var(--lh-body-en);
+  }
+  
+  
+  /* =========================================================
+     TYPOGRAPHY
+  ========================================================= */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+    line-height: var(--lh-heading);
+    font-weight: 700;
+  }
+  
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] h3,
+  html[lang="en"] h4,
+  html[lang="en"] h5,
+  html[lang="en"] h6 {
+    font-family: var(--font-heading);
+  }
+  
+  html[lang="fa"] h1,
+  html[lang="fa"] h2,
+  html[lang="fa"] h3,
+  html[lang="fa"] h4,
+  html[lang="fa"] h5,
+  html[lang="fa"] h6 {
+    font-family: var(--font-fa);
+  }
+  
+  h1 {
+    font-size: var(--fs-h1);
+  }
+  
+  h2 {
+    font-size: var(--fs-h2);
+  }
+  
+  h3 {
+    font-size: var(--fs-h3);
+  }
+  
+  h4 {
+    font-size: var(--fs-h4);
+  }
+  
+  h5 {
+    font-size: var(--fs-h5);
+  }
+  
+  p {
+    color: var(--text-secondary);
+    font-size: var(--fs-body);
+  }
+  
+  
+  /* =========================================================
+     LAYOUT
+  ========================================================= */
+  
+  .container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+  
+  .section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+  
+  
+  /* =========================================================
+     BUTTONS
+  ========================================================= */
+  
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+  
+    min-height: 48px;
+  
+    padding-inline: var(--space-6);
+  
+    background: var(--primary-500);
+    color: var(--text-white);
+  
+    border: none;
+    border-radius: var(--radius-full);
+  
+    cursor: pointer;
+  
+    font-weight: 600;
+    font-size: var(--fs-body);
+  
+    transition:
+      background var(--transition-base),
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:focus-visible {
+    outline: 3px solid rgba(22, 58, 95, 0.25);
+    outline-offset: 4px;
+  }
+  
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 48px;
+  
+    padding-inline: var(--space-6);
+  
+    background: transparent;
+  
+    border: 2px solid var(--primary-500);
+    border-radius: var(--radius-full);
+  
+    color: var(--primary-500);
+  
+    font-weight: 600;
+  
+    cursor: pointer;
+  
+    transition: all var(--transition-base);
+  }
+  
+  .btn-secondary:hover {
+    background: var(--primary-500);
+    color: var(--white);
+  }
+  
+  
+  /* =========================================================
+     CARDS
+  ========================================================= */
+  
+  .card {
+    background: var(--surface-primary);
+  
+    border: 1px solid var(--border-light);
+  
+    border-radius: var(--radius-xl);
+  
+    padding: var(--space-8);
+  
+    box-shadow: var(--shadow-md);
+  
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  
+  /* =========================================================
+     FORM SYSTEM
+  ========================================================= */
+  
+  .input {
+    width: 100%;
+  
+    min-height: 56px;
+  
+    padding-inline: var(--space-4);
+  
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+  
+    background: var(--surface-primary);
+  
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+  
+  .input:focus {
+    outline: none;
+  
+    border-color: var(--primary-500);
+  
+    box-shadow:
+      0 0 0 4px rgba(22, 58, 95, 0.10);
+  }
+  
+  textarea.input {
+    min-height: 140px;
+    resize: vertical;
+    padding-block: var(--space-4);
+  }
+  
+  
+  /* =========================================================
+     GRID SYSTEM
+  ========================================================= */
+  
+  .grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  
+  /* =========================================================
+     FLEX UTILITIES
+  ========================================================= */
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .gap-2 {
+    gap: var(--space-2);
+  }
+  
+  .gap-4 {
+    gap: var(--space-4);
+  }
+  
+  .gap-6 {
+    gap: var(--space-6);
+  }
+  
+  
+  /* =========================================================
+     TEXT UTILITIES
+  ========================================================= */
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-primary {
+    color: var(--primary-500);
+  }
+  
+  .text-muted {
+    color: var(--text-muted);
+  }
+  
+  
+  /* =========================================================
+     BACKGROUND UTILITIES
+  ========================================================= */
+  
+  .bg-light {
+    background: var(--surface-secondary);
+  }
+  
+  .bg-primary {
+    background: var(--primary-500);
+  }
+  
+  
+  /* =========================================================
+     ACCESSIBILITY
+  ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    *,
+    *::before,
+    *::after {
+  
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+  
+      transition-duration: 0.01ms !important;
+  
+      scroll-behavior: auto !important;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+  
+  @media (max-width: 1024px) {
+  
+    .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+  
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      grid-template-columns: 1fr;
+    }
+  
+    .container {
+      padding-inline: var(--space-4);
+    }
+  
+  }

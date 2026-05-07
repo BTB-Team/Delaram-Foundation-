@@ -1,0 +1,30 @@
+{
+  "name": "delaram-foundation-",
+  "version": "1.0.0",
+  "description": "Website project for Delaram Foundation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "min:css": "postcss src/css/style.css -o dist/style.min.css",
+    "min:js": "terser src/js/main.js -o dist/main.min.js -c -m",
+    "min": "npm run min:css && npm run min:js"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BTB-Team/Delaram-Foundation-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BTB-Team/Delaram-Foundation-/issues"
+  },
+  "homepage": "https://github.com/BTB-Team/Delaram-Foundation-#readme",
+  "devDependencies": {
+    "cssnano": "^8.0.1",
+    "postcss": "^8.5.14",
+    "postcss-cli": "^11.0.1",
+    "terser": "^5.47.1"
+  }
+}
