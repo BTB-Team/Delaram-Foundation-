@@ -1,0 +1,663 @@
+/*============== membership page css styles ==============*/
+
+/* =========================================================
+           DESIGN SYSTEM
+        ========================================================= */
+
+:root {
+
+    /* PRIMARY */
+
+    --primary-50: #eef4f9;
+    --primary-100: #d8e6f1;
+    --primary-200: #b8d0e3;
+    --primary-300: #8fb1cc;
+    --primary-400: #5f8eb0;
+    --primary-500: #163a5f;
+    --primary-600: #0f2c4a;
+
+    /* WHITE */
+
+    --white: #ffffff;
+
+    /* GRAY */
+
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+
+    /* SURFACE */
+
+    --background: var(--white);
+    --surface-primary: var(--white);
+
+    /* TEXT */
+
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --text-white: var(--white);
+
+    /* BORDER */
+
+    --border-light: var(--gray-200);
+    --border-medium: var(--gray-300);
+
+    /* FONTS */
+
+    --font-fa: "Vazirmatn", sans-serif;
+    --font-en: "Inter", sans-serif;
+    --font-heading: "Poppins", sans-serif;
+
+    /* SPACING */
+
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* RADIUS */
+
+    --radius-md: .75rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius-full: 999px;
+
+    /* SHADOW */
+
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, .06);
+    --shadow-lg: 0 20px 60px rgba(15, 23, 42, .12);
+
+    /* CONTAINER */
+
+    --container-xl: 1280px;
+    --container-lg: 1200px;
+
+    /* TRANSITION */
+
+    --transition-base: 300ms ease;
+
+    /* TYPOGRAPHY */
+
+    --fs-h1: clamp(2.5rem, 5vw, 4.5rem);
+    --fs-h2: clamp(2rem, 4vw, 3.5rem);
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    --lh-heading: 1.2;
+    --lh-body-en: 1.7;
+    --lh-body-fa: 2;
+
+    /* SURFACE */
+
+    --surface-secondary: var(--gray-50);
+
+    /* SHADOW */
+
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .04);
+
+    /* TRANSITION */
+
+    --transition-fast: 150ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    line-height: var(--lh-heading);
+    font-weight: 700;
+}
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6 {
+    font-family: var(--font-heading);
+}
+
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4,
+html[lang="fa"] h5,
+html[lang="fa"] h6 {
+    font-family: var(--font-fa);
+}
+
+/* =========================================================
+           RESET
+        ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-en);
+    line-height: var(--lh-body-en);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+html[lang="fa"] body {
+    font-family: var(--font-fa);
+    line-height: var(--lh-body-fa);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* =========================================================
+           UTILITIES
+        ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+}
+
+.membership-form {
+    padding-block: var(--space-20);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* =========================================================
+           HERO
+        ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 620px;
+    padding-block: var(--space-20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, .45),
+            rgba(0, 0, 0, .45)),
+        url("../images/membership-hero.webp");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-inline: var(--space-6);
+}
+
+.hero-title {
+    color: var(--white) !important;
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
+    margin-bottom: var(--space-4);
+}
+
+.hero-text {
+    color: rgba(255, 255, 255, .92);
+    font-size: clamp(1rem, 2vw, 1.7rem);
+    max-width: 760px;
+    margin-inline: auto;
+}
+
+/* =========================================================
+           LANGUAGE SWITCH
+        ========================================================= */
+
+.lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.lang-btn {
+    width: 90px;
+    height: 46px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .12);
+    color: var(--white);
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: var(--transition-base);
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    background: var(--white);
+    color: var(--primary-500);
+}
+
+/* =========================================================
+           FORM CARD
+        ========================================================= */
+
+.membership-card {
+    max-width: 1100px;
+    margin-inline: auto;
+
+    background: var(--surface-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-2xl);
+
+    padding: var(--space-16);
+
+    box-shadow: var(--shadow-lg);
+
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.membership-card:hover {
+    box-shadow: 0 25px 70px rgba(15, 23, 42, .14);
+}
+
+.form-section {
+    margin-bottom: var(--space-16);
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+.form-section:not(:last-child) {
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--border-light);
+}
+
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+/* NUMBER BOX */
+.section-number {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    border-radius: .75rem;
+    background: var(--primary-50);
+    color: var(--primary-500);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: .95rem;
+
+    flex-shrink: 0;
+}
+
+/* TITLE */
+.section-title h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 700;
+    flex: 1;
+}
+
+/* DEFAULT LTR ORDER */
+html[dir="ltr"] .section-number {
+    order: 0;
+}
+
+html[dir="ltr"] .section-title h2 {
+    order: 1;
+    text-align: left;
+}
+
+/* RTL ORDER (DARI) */
+html[dir="rtl"] .section-number {
+    order: 1;
+}
+
+html[dir="rtl"] .section-title h2 {
+    order: 0;
+    text-align: right;
+}
+
+
+/* =========================================================
+           FORM
+        ========================================================= */
+
+.form-group {
+    margin-bottom: var(--space-6);
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: var(--space-3);
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--gray-800);
+}
+
+
+
+.input {
+    width: 100%;
+    min-height: 56px;
+    padding-inline: var(--space-4);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    background: var(--surface-primary);
+    color: var(--text-primary);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.input:hover {
+    border-color: var(--primary-300);
+}
+
+.input::placeholder {
+    color: var(--gray-400);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-500);
+
+    box-shadow:
+        0 0 0 4px rgba(22, 58, 95, .1);
+}
+
+textarea.input {
+    min-height: 180px;
+    resize: vertical;
+    padding-block: var(--space-4);
+}
+
+
+/* =========================================================
+           PRIVACY BOX
+        ========================================================= */
+
+.privacy-box {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    border: 1px solid var(--border-light);
+    background: var(--surface-secondary);
+    border-radius: var(--radius-xl);
+    margin-top: var(--space-8);
+}
+
+.privacy-icon {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.privacy-text {
+    color: #4f6b8a;
+    line-height: 1.9;
+    font-size: .95rem;
+}
+
+/* =========================================================
+           ACTIONS
+        ========================================================= */
+
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    width: auto;
+    min-height: 56px;
+    height: 58px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition:
+        background-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+.btn-primary {
+    background: var(--primary-500);
+    color: var(--text-white);
+
+    border-radius: var(--radius-full);
+}
+
+.btn-primary:hover {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+
+    border: 2px solid var(--primary-500);
+
+    border-radius: var(--radius-full);
+
+    color: var(--primary-500);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-500);
+    color: var(--white);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgba(22, 58, 95, .25);
+    outline-offset: 4px;
+}
+
+.bottom-note {
+    margin-top: var(--space-8);
+    text-align: center;
+    color: var(--gray-400);
+    font-size: .8rem;
+}
+
+/* =========================================================
+           RTL
+        ========================================================= */
+
+html[dir="rtl"] .membership-card {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .section-title {
+    flex-direction: row-reverse;
+}
+
+
+
+/* =========================================================
+   SELECT STYLE
+========================================================= */
+
+select.input {
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    cursor: pointer;
+}
+
+/* HIDE DEFAULT ARROW IN IE */
+
+select.input::-ms-expand {
+    display: none;
+}
+
+select.input {
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--gray-500) 50%),
+        linear-gradient(135deg, var(--gray-500) 50%, transparent 50%);
+    background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px);
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+}
+
+html[dir="rtl"] select.input {
+    background-position:
+        20px calc(50% - 3px),
+        26px calc(50% - 3px);
+}
+
+
+
+/* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+@media (max-width: 992px) {
+
+    .membership-card {
+        padding: var(--space-10);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .membership-card {
+        padding: var(--space-8);
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 540px) {
+
+    .hero-title {
+        font-size: 2.7rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .membership-form {
+        padding-block: var(--space-12);
+    }
+}
+
+@media (max-width: 540px) {
+
+    .hero-content {
+        padding-inline: var(--space-4);
+    }
+
+}
