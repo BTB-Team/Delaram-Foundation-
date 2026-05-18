@@ -1,1 +1,327 @@
 /*============== blog page css styles ==============*/
+:root{
+  --primary-500:#163a5f;
+  --accent-pink-500:#e84d8a;
+  --white:#fff;
+  --gray-50:#f8fafc;
+  --gray-100:#f1f5f9;
+  --gray-200:#e2e8f0;
+  --gray-500:#64748b;
+  --gray-600:#475569;
+  --gray-900:#0f172a;
+  --background:var(--white);
+  --surface-primary:var(--white);
+  --text-primary:var(--gray-900);
+  --text-secondary:var(--gray-600);
+  --text-muted:var(--gray-500);
+  --font-fa:"Vazirmatn",sans-serif;
+  --font-en:"Inter",sans-serif;
+  --font-heading:"Poppins",sans-serif;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background:var(--background);
+  color:var(--text-primary);
+  font-family:var(--font-en);
+  line-height:1.7;
+}
+html[lang="fa"] body{
+  font-family:var(--font-fa);
+  direction:rtl;
+}
+html[lang="fa"] 
+
+.en-only{
+  display:none;
+}
+html[lang="en"] 
+
+.fa-only{
+  display: none;
+}
+/* Header */
+.blog-header{
+  background: 
+  linear-gradient(135deg, #163b5f54, #0a1e3342),
+  url('https://picsum.photos/1200/600'); /* مسیر عکس */
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  padding:2rem 1rem;
+  text-align:center;
+  color:white;
+}
+
+.blog-header h1{
+  font-family:var(--font-heading);
+  font-size:3.7rem;
+  margin-bottom:5px;
+}
+.blog-header p {
+  font-size: 1.7rem;   /* اندازه بزرگ‌تر */
+  line-height: 1.5;    /* فاصله بین خطوط */
+}
+
+.hero-line {
+  width:100px;
+  height:8px;
+  background:#b67b47;
+  border-radius:50px;
+  margin: 0.2rem auto;
+}
+
+.lang-toggle{
+  margin-top:20px;
+}
+.lang-btn{
+  padding:8px 20px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:white;
+  margin:0 5px;
+  font-weight:bold;
+}
+.lang-btn.active{
+  background:var(--accent-pink-500);
+  color:white;
+}
+/* Articles */
+.articles-container{
+  max-width:1200px;
+  margin:auto;
+  padding:2rem 1rem;
+}
+.articles-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+}
+/* Card */
+.article-card{
+  background:white;
+  border:1px solid #eee;
+  border-radius:20px;
+  overflow:hidden;
+  transition:0.3s;
+}
+.article-card:hover{
+  transform:translateY(-5px);
+}
+.card-img{
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:4rem;
+  background:#f1f5f9;
+}
+.card-body{
+  padding:20px;
+}
+.card-tag{
+  background:#ffe4ef;
+  color:#e84d8a;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+.card-title{
+  font-size:1.3rem;
+  margin:10px 0;
+  font-family:var(--font-heading);
+}
+.card-desc{
+  color:var(--text-secondary);
+  margin-bottom:20px;
+}
+.card-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid #d2d1d1;
+  padding-top:15px;
+}
+.like-btn,
+.comments-toggle{
+  border:none;
+  background:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.like-btn.liked{
+  color:#e84d8a;
+}
+/* Comments */
+.comments-section{
+  padding:20px;
+  display:none;
+}
+.comments-section.open{
+  display:block;
+}
+.comment-item{
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+}
+.comment-author{
+  font-weight:bold;
+  color:#163a5f;
+}
+.comment-form{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+.comment-form input{
+  flex:1;
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+.comment-form button{
+  padding:10px 15px;
+  background:#163a5f;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+/* Toast */
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0f172a;
+  color:white;
+  padding:10px 20px;
+  border-radius:10px;
+  display:none;
+}
+.toast.show{
+  display:block;
+}
+.view-text{
+  cursor: pointer;
+}
+.cta-section {
+  background: linear-gradient(
+    to bottom right,
+    #0a2540,   /* معادل ecaoNavy یا رنگ تیره سفارشی */
+    #00406d,   /* رنگ میانی آبی تیره */
+    #0a2540    /* دوباره همان رنگ تیره سفارشی */
+  );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.cta-section p {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.btn {
+  background: #ffffff;
+  color: #0a2540;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #f7f7f7;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.btn-alt {
+  background: #00b3ff;
+  color: #ffffff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btn-alt:hover {
+  background: #00bdec;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.activities-section{
+  background:#f8f8f8;
+  padding:80px 60px;
+  font-family:Poppins,sans-serif;
+}
+
+.activities{
+  padding:80px 60px;
+}
+
+.activities .title {
+  font-size: 45px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+  margin: 20px 0; /* فاصله بالا و پایین */
+}
+.activities .line {
+  width: 110px;
+  height: 8px;
+  background: #b67b47;
+  border-radius: 50px;
+  margin: 10px 0; /* فاصله بالا و پایین، سمت چپ */
+}
+.activities .desc {
+  max-width: 600px;
+  margin: 40px 0 0 0; /* فاصله بالا، سمت چپ */
+  font-size: 25px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .activities .title {
+    font-size: 28px;
+  }
+  .activities .desc {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
