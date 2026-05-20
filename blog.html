@@ -1,27 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delaram | Blog</title>
-    <!-- google font links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- css links -->
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/blog.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/css/blog.css">
+  <script src="./src/js/blog.js"></script>
 </head>
 <body>
-    <!-- ============== Muzhgan Qambari  page ==============  -->
+<div class="blog-wrap">
+  <header class="blog-header">
+    <h1>
+      <span class="en-only">Blog</span>
+      <span class="fa-only">بلاگ </span>
+    </h1>
+    <div class="hero-line"></div>
+    <p class="en-only">Insights, stories & and updates form the ground in Afghnistan.</p>
+    <p class="fa-only">بینش‌ها، داستان‌ها و ایده‌هاو به روز رسانی ها زمینه را در افغانستان تشکیل میدهند.</p>
+    <div class="lang-toggle">
+      <button class="lang-btn fa-btn" onclick="switchLang('fa')">دری</button>
+      <button class="lang-btn en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </header>
 
+  <section class="activities">
+    <h1 class="title en-only">Latest Activities</h1>
+    <h1 class="title fa-only">آخرین فعالیت‌ها</h1>
+    <div class="line"></div>
+    <p class="desc en-only">
+      Stay updated with our latest news, cultural articles, and community stories.
+    </p>
+    <p class="desc fa-only">
+      با آخرین اخبار، مقالات فرهنگی و داستان‌های جامعه ما به‌روز باشید.
+    </p>
+  </section>
 
+  <div id="cards-container"></div>
+  <main class="articles-container">
+    <div class="articles-grid" id="articlesGrid"></div>
+  </main>
+  <div class="toast" id="toast"></div>
+</div>
 
-
-
-    <!-- end code -->
-    <script src="./src/js/main.js" defer></script>
-    <script src="./src/js/blog.js" defer></script>
+<section class="cta-section">
+  <h2 class="en-only">Ready to Make a Difference?</h2>
+  <h2 class="fa-only">آماده‌ای برای ایجاد تغییر؟</h2>
+  <p class="en-only">Join us in our mission to empower communities and build sustainable foundations for the future of Afghanistan.</p>
+  <p class="fa-only">به مأموریت ما بپیوندید تا جوامع را توانمند سازیم و پایه‌های پایدار برای آینده افغانستان بنا کنیم.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn en-only">Contact Us →</a>
+    <a href="contact.html" class="btn fa-only">تماس با ما →</a>
+    <a href="support.html" class="btn-alt en-only">Support Our Work →</a>
+    <a href="support.html" class="btn-alt fa-only">حمایت از کار ما →</a>
+  </div>
+</section>
 </body>
 </html>
