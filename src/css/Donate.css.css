@@ -1,0 +1,434 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f0eb;
+            margin: 0;      /* حذف فاصله بدنه */
+            padding: 0;     /* حذف فاصله بدنه */
+        }
+        
+
+        /* ========== SLIDER ========== */
+        .slider-container {
+            max-width: 100%;   
+            
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: relative;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(23, 92, 182, 0.8);
+            color: #e0e4e0;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.2s;
+        }
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+        @media (max-width: 700px) {
+            .slide img {
+                height: 250px;
+            }
+            .slide-caption {
+                font-size: 0.8rem;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+        /* لایه تیره روی تصویر برای خوانایی بهتر متن */
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 50px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.5), transparent);
+        }
+
+        .slide-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(217,74,43,0.8);
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .slide h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .slide p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+/*Donate section*/
+.cover {
+            position: relative;
+            width: 100%;
+            
+        }
+        
+        .image {
+            width: 100%;
+            height: 400px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px 25px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        .text-overlay h1{
+            margin-bottom: 10px;
+            font-weight: 900;
+            font-family: 'Poppins, sans-serif,Vazirmatn';
+            font-size: 80px;
+            
+        }
+        .text-overlay p{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+      
+/* CONTAINER */
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* CARD */
+.card {
+  width: 52%;
+  min-height: 750px;
+  background: #ffffff;
+  border-radius: 35px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+ 
+  transition: all 0.6s ease; /* نرم‌تر شد */
+  text-align: left;
+  border: 2px solid transparent;
+}
+
+
+.card:hover {
+ transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+border: 1.6px solid #57e0ff;
+}
+
+/* HEADER */
+.card-header {
+  background-color: #011c30;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+ 
+  gap: 28px;
+
+}
+
+.card-header .icon {
+  background: linear-gradient(135deg, #9b852b, #ffcc25);
+  color: #0a3d62;
+  padding: 24px;
+  border-radius: 19px;
+  font-size: 30px;
+  transition: transform 0.5s ease; /* حرکت نرم */
+}
+
+.card-header .icon:hover {
+  transform: rotate(8deg); /* کمی کج شدن */
+}
+
+
+.card-header h2 {
+  margin: 0;
+  font-size: 33px;
+  
+}
+
+.card-header span {
+  font-size: 17px;
+  color: #dcdde1;
+}
+
+
+.card-body {
+  flex: 1;
+  background: #f0f2f0;
+  padding: 34px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff; /* پشت زمینه سفید */
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* CONTACT ROW */
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+  background: #ffffff; /* پشت زمینه سفید */
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* هر باکس */
+.info-box {
+  flex: 1;
+  background: #ffffff; /* سفید ثابت */
+  padding: 30px;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  font-size: 23px;
+  margin-bottom: 34px;
+  gap: 12px;
+  transition: all 0.6s ease;
+  text-align: left;
+  border: 2px solid transparent;
+  box-shadow: 0px 0.5px 0px 0.5px rgba(0,0,0,0.15);
+}
+
+.info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  border: 1.6px solid #57e0ff;
+  background: #ffffff;
+}
+
+
+/* ICON */
+
+.icon-box1 {
+
+  background: #c1af743e;
+  color: #67541a;
+  border-radius: 13px;
+   width: 50px;
+  height: 50px;
+  align-items: center;
+   display: flex;
+  justify-content: center;
+  
+}
+
+
+
+.icon-box2 {
+
+  background: #61adc53e;
+  color: #028dc5;
+  border-radius: 13px; width: 50px;
+  height: 50px;
+  align-items: center;
+   display: flex;
+  justify-content: center;
+}
+
+
+
+/* TEXT */
+.info-box strong {
+  color: #0a3d62;
+}
+
+.info-box a {
+  color: #333;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  color: #009bce;
+}
+
+/* FOOTER */
+.card-footer {
+  background: #ffffff; /* سفید ثابت */
+  margin: 20px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #0a3d62;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-footer:hover {
+  color: #57e0ff;
+}
+
+
+
+/* پاراگراف داخل کارت */
+.p {
+  background: #ffffffee;
+  padding: 37px;
+  border-radius: 12px;
+  color: #525252;
+  display: flex;
+  align-items: center;
+  width: 640px;
+  height: 130px;
+  margin-left: 23px;
+  margin-top: 35px;
+  font-size: 19px;
+  box-shadow: 0 4px 10px rgba(207, 207, 207, 0.08);
+  transition: all 0.6s ease; /* نرم‌تر شد */
+  text-align: left;
+  border: 2px solid transparent;
+}
+
+.p:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  border: 1.4px solid #57e0ff;
+  background: #ffffff;
+}
+
+/* وقتی کل کارت هاور شود، آیکن‌ها هم تغییر کنند */
+.card:hover .icon,
+.card:hover .icon-box1,
+.card:hover .icon-box2 {
+  transform: rotate(8deg);
+  transition: transform 0.6s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+
+.custom-btn {
+  display: inline-flex;           /* آیکن و متن کنار هم */
+  align-items: center;            /* وسط‌چین عمودی */
+  gap: 12px;                      /* فاصله بین آیکن و متن */
+  background: linear-gradient(135deg, #173352, #012032); /* گرادیانت پس‌زمینه */
+  color: #fff;
+  padding: 18px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 30px;
+  cursor: pointer;
+  border: none;
+}
+
+.parent-section{
+  width: 100%;
+  text-align: center;
+}
+
+/* آیکن دایره‌ای */
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #4085aa43;            /* رنگ دایره */
+  border-radius: 50%;             /* دایره کامل */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #948140;                 /* رنگ آیکن */
+  font-size: 18px;
+  border: 2px solid transparent;  /* حالت اولیه */
+  transition: border 1.2s ease;   /* تغییر بوردر خیلی آهسته */
+}
+
+/* فقط وقتی روی آیکن می‌رویم بوردر بگیرد */
+.icon-circle:hover {
+  border: 2px solid #00cbfe;
+}
+
+.btn-text {
+  white-space: nowrap;   
+  font-size: 15px;         /* متن در یک خط */
+}
+

@@ -1,7 +1,151 @@
+// ===== منوی موبایل ===== 
+window.toggleMobileMenu = function() { 
+  const menu = document.getElementById('mobile-menu'); 
+  if (menu) menu.classList.toggle('show'); 
+}; 
+
+// ===== افکت اسکرول نوبار ===== 
+window.addEventListener('scroll', function() { 
+  const navbar = document.getElementById('navbar'); 
+  if (navbar) { 
+    if (window.scrollY > 50) { 
+      navbar.classList.add('shadow-lg'); 
+      navbar.style.background = 'rgba(255,255,255,0.95)'; 
+    } else { 
+      navbar.classList.remove('shadow-lg'); 
+      navbar.style.background = 'rgba(255,255,255,0.7)'; 
+    } 
+  } 
+}); 
+
+// ===== کرسر سفارشی ===== 
+const cursorOutline = document.getElementById('cursor-outline'); 
+const cursorDot = document.getElementById('cursor-dot');
+if (cursorOutline && cursorDot) { 
+  window.addEventListener('mousemove', function(e) { 
+    cursorDot.style.left = e.clientX + 'px'; 
+    cursorDot.style.top = e.clientY + 'px'; 
+    cursorDot.style.opacity = '1'; 
+    cursorOutline.animate({ left: e.clientX + 'px', top: e.clientY + 'px' }, { duration: 500, fill: 'forwards' }); 
+    cursorOutline.style.opacity = '1'; 
+  }); 
+  document.querySelectorAll('a, button, .clickable').forEach(el => { 
+    el.addEventListener('mouseenter', () => { 
+      cursorOutline.style.width = '60px'; 
+      cursorOutline.style.height = '60px'; 
+      cursorOutline.style.borderColor = '#b18a5e'; 
+      cursorDot.style.backgroundColor = '#b18a5e'; 
+    }); 
+    el.addEventListener('mouseleave', () => { 
+      cursorOutline.style.width = '40px'; 
+      cursorOutline.style.height = '40px'; 
+      cursorOutline.style.borderColor = '#009fe3'; 
+      cursorDot.style.backgroundColor = '#009fe3'; 
+    }); 
+  }); 
+  document.addEventListener('mouseleave', () => { 
+    cursorOutline.style.opacity = '0'; 
+    cursorDot.style.opacity = '0'; 
+  }); 
+} 
+
+// ===== دکمه برگشت به بالا ===== 
+const backToTopBtn = document.getElementById('backToTopBtn'); 
+if (backToTopBtn) { 
+  window.addEventListener('scroll', () => { 
+    if (window.scrollY > 300) { 
+      backToTopBtn.style.opacity = '1'; 
+      backToTopBtn.style.visibility = 'visible'; 
+    } else { 
+      backToTopBtn.style.opacity = '0'; 
+      backToTopBtn.style.visibility = 'hidden'; 
+    } 
+  }); 
+  backToTopBtn.addEventListener('click', () => { 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+  }); 
+}
+
+// ===== سیستم ترجمه عمومی (هدر + فوتر + صفحات) ===== 
+const globalTranslations = { 
+  en: { 
+    home: "Home", about: "About", services: "Services", activities: "Activities", 
+    partners: "Partners", blog: "Blog", contact: "Contact", join_us: "Join Us", 
+    donate: "Donate ♡", lang_en: "EN", lang_da: "دری", 
+    footer_description: "ECAO is dedicated to creating positive change through community empowerment and sustainable development.",
+    quick_links: "Quick Links", location: "Kabul, Afghanistan", 
+    phone: "+93 764 348 000", email: "info@ecao.ngo", 
+    support_us: "Support Us", 
+    support_description: "Your contribution can change lives for thousands of Afghans in need.", 
+    donate_now: "Donate Now", 
+    developer: "Design and Developed by Taqi Raya(BTB)", 
+    copyright: "© 2014 - 2026 ECAO. All rights reserved.", 
+    back_top: "↑" 
+  }, 
+  da: { 
+    home: "خانه", about: "در باره", services: "خدمات", activities: "فعالیت‌ها", 
+    partners: "شریک‌ها", blog: "وبلاگ", contact: "تماس با ما", join_us: "عضویت", 
+    donate: "کمک ♡", lang_en: "EN", lang_da: "دری", 
+    footer_description: "ای‌سی‌ای‌او متعهد به ایجاد تغییر مثبت از طریق توانمندسازی جامعه و توسعه پایدار است.",
+    quick_links: "لینک‌های سریع", location: "کابل، افغانستان", 
+    phone: "+93 764 348 000", email: "info@ecao.ngo", 
+    support_us: "حمایت از ما", 
+    support_description: "سهولت شما می‌تواند زندگی‌های هزاران افغان نیازمند را تغییر دهد.", 
+    donate_now: "همین حالا کمک کنید", 
+    developer: "طراحی و توسعه توسط تقی رایا (BTB)", 
+    copyright: "© 2014 - 2026 ای‌سی‌ای‌او. تمامی حقوق محفوظ است.", 
+    back_top: "↑" 
+  } 
+};
+
+// تابع تنظیم زبان عمومی
+function setLanguage(lang) { 
+  const trans = globalTranslations[lang]; 
+  if (!trans) return; 
+  document.querySelectorAll('[data-i18n]').forEach(elem => { 
+    const key = elem.getAttribute('data-i18n'); 
+    if (trans[key]) { 
+      if (elem.tagName === 'SPAN' && elem.classList.contains('material-icons')) return; 
+      elem.innerText = trans[key]; 
+    } 
+  }); 
+  // اگر تابع ترجمه صفحه‌ای وجود دارد، آن را هم صدا بزن
+  if (typeof switchPageLanguage === 'function') {
+    switchPageLanguage(lang);
+  }
+} 
+
+// رویداد کلیک دکمه‌های زبان در هدر
+document.querySelectorAll('.lang-switch a').forEach(link => { 
+  link.addEventListener('click', (e) => { 
+    e.preventDefault(); 
+    const lang = link.getAttribute('href').split('=')[1]; 
+    localStorage.setItem('lang', lang); 
+    setLanguage(lang); 
+    document.querySelectorAll('.lang-switch a').forEach(l => l.classList.remove('active'));
+    // فعال کردن همه دکمه‌های همان زبان
+    document.querySelectorAll('.lang-switch a').forEach(l => {
+      if (l.getAttribute('href').includes(lang)) l.classList.add('active');
+    });
+  }); 
+}); 
+
+window.addEventListener('DOMContentLoaded', () => { 
+  const savedLang = localStorage.getItem('lang') || 'en'; 
+  setLanguage(savedLang); 
+  document.querySelectorAll('.lang-switch a').forEach(link => { 
+    if (link.getAttribute('href').includes(savedLang)) { 
+      link.classList.add('active'); 
+    } else { 
+      link.classList.remove('active'); 
+    } 
+  }); 
+});
 
 
-// داده‌ها به دو زبان
-const translations = {
+
+// داده‌های صفحه services به دو زبان
+const pageTranslations = {
   en: {
     heroTitle: "Empowering Communities",
     heroText: "Join us in building sustainable foundations for the future of Afghanistan.",
@@ -12,47 +156,32 @@ const translations = {
     ctaBtn1: "Contact Us →",
     ctaBtn2: "Support Our Work →",
     readMore: "Read more ▼",
-  readLess: "Read less ▲",
+    readLess: "Read less ▲",
     cards: [
       {
         image: "./src/assets/images/1776498176771-428887401.webp",
-        title: "Secoial Activities",
+        title: "Social Activities",
         text: "Social activities connect people together, \ncreating bonds and shared experiences.",
-        fullText: `Social activities bring people together and create bonds.
-They encourage teamwork and collaboration among communities.
-Such activities often include cultural events and group projects.
-They help individuals develop communication and leadership skills.
-Participation increases awareness of social responsibilities.
-Overall, they strengthen unity and collective growth.`,
+        fullText: "Social activities bring people together and create bonds.\nThey encourage teamwork and collaboration among communities.\nSuch activities often include cultural events and group projects.\nThey help individuals develop communication and leadership skills.\nParticipation increases awareness of social responsibilities.\nOverall, they strengthen unity and collective growth.",
         date: "April 18, 2026"
       },
       {
         image: "./src/assets/images/1776498854234-427495685.webp",
         title: "Health",
         text: "Health is the foundation of life, \nrequiring balance in body and mind.",
-        fullText: `Health is the foundation of a productive life.
-Maintaining good health requires balanced nutrition and exercise.
-It also involves mental well-being and stress management.
-Preventive care reduces risks of chronic diseases.
-Healthy habits improve energy and daily performance.
-Strong health ensures longevity and quality of life.`,
+        fullText: "Health is the foundation of a productive life.\nMaintaining good health requires balanced nutrition and exercise.\nIt also involves mental well-being and stress management.\nPreventive care reduces risks of chronic diseases.\nHealthy habits improve energy and daily performance.\nStrong health ensures longevity and quality of life.",
         date: "April 18, 2026"
       },
       {
         image: "./src/assets/images/1776497223256-383512761.webp",
         title: "Education",
         text: "Education empowers individuals with knowledge, \nopening doors to opportunities.",
-        fullText: `Education empowers individuals with knowledge and skills.
-It opens doors to opportunities and career growth.
-Learning fosters creativity and critical thinking abilities.
-Education builds awareness of social and global issues.
-It helps shape responsible and informed citizens.
-Ultimately, education drives progress and innovation.`,
+        fullText: "Education empowers individuals with knowledge and skills.\nIt opens doors to opportunities and career growth.\nLearning fosters creativity and critical thinking abilities.\nEducation builds awareness of social and global issues.\nIt helps shape responsible and informed citizens.\nUltimately, education drives progress and innovation.",
         date: "April 18, 2026"
       }
     ]
   },
-  fa: {
+  da: {
     heroTitle: "توانمندسازی جوامع",
     heroText: "با ما همراه شوید در ساختن بنیادهای پایدار برای آینده افغانستان.",
     servicesTitle: "خدمات ما",
@@ -62,58 +191,44 @@ Ultimately, education drives progress and innovation.`,
     ctaBtn1: "تماس با ما →",
     ctaBtn2: "حمایت از کار ما →",
     readMore: "بیشتر بخوانید ▼",
-  readLess: "کمتر بخوانید ▲",
+    readLess: "کمتر بخوانید ▲",
     cards: [
       {
         image: "./src/assets/images/1776498176771-428887401.webp",
         title: "فعالیت‌های اجتماعی",
         text: "فعالیت‌های اجتماعی مردم را به هم نزدیک می‌سازد، \nو پیوندها و تجربه‌های مشترک ایجاد می‌کند.",
-        fullText: `فعالیت‌های اجتماعی باعث نزدیکی و اتحاد مردم می‌شود.
-آن‌ها همکاری و کار گروهی را تقویت می‌کنند.
-این فعالیت‌ها شامل رویدادهای فرهنگی و پروژه‌های گروهی است.
-مهارت‌های ارتباطی و رهبری افراد را رشد می‌دهد.
-شرکت در این فعالیت‌ها آگاهی اجتماعی را افزایش می‌دهد.
-در نهایت، اتحاد و رشد جمعی را تقویت می‌کند.`,
-        date: "۱۸ اپریل ۲۰۲۶",
-        
+        fullText: "فعالیت‌های اجتماعی باعث نزدیکی و اتحاد مردم می‌شود.\nآن‌ها همکاری و کار گروهی را تقویت می‌کنند.\nاین فعالیت‌ها شامل رویدادهای فرهنگی و پروژه‌های گروهی است.\nمهارت‌های ارتباطی و رهبری افراد را رشد می‌دهد.\nشرکت در این فعالیت‌ها آگاهی اجتماعی را افزایش می‌دهد.\nدر نهایت، اتحاد و رشد جمعی را تقویت می‌کند.",
+        date: "۱۸ اپریل ۲۰۲۶"
       },
       {
         image: "./src/assets/images/1776498854234-427495685.webp",
         title: "سلامتی",
         text: "سلامتی اساس زندگی است، \nو نیازمند تعادل جسم و روان می‌باشد.",
-        fullText: `سلامتی پایه زندگی پربار است.
-تغذیه متوازن و ورزش برای حفظ سلامتی ضروری است.
-سلامتی روان و مدیریت استرس نیز اهمیت دارد.
-مراقبت پیشگیرانه خطر بیماری‌های مزمن را کاهش می‌دهد.
-عادات سالم انرژی و عملکرد روزانه را بهبود می‌بخشد.
-سلامتی قوی عمر طولانی و کیفیت زندگی را تضمین می‌کند.`,
+        fullText: "سلامتی پایه زندگی پربار است.\nتغذیه متوازن و ورزش برای حفظ سلامتی ضروری است.\nسلامتی روان و مدیریت استرس نیز اهمیت دارد.\nمراقبت پیشگیرانه خطر بیماری‌های مزمن را کاهش می‌دهد.\nعادات سالم انرژی و عملکرد روزانه را بهبود می‌بخشد.\nسلامتی قوی عمر طولانی و کیفیت زندگی را تضمین می‌کند.",
         date: "۱۸ اپریل ۲۰۲۶"
       },
       {
         image: "./src/assets/images/1776497223256-383512761.webp",
         title: "آموزش",
         text: "آموزش افراد را با دانش توانمند می‌سازد، \nو دروازه‌های فرصت‌ها را می‌گشاید.",
-        fullText: `آموزش افراد را با دانش و مهارت توانمند می‌سازد.
-فرصت‌های شغلی و رشد را فراهم می‌کند.
-یادگیری خلاقیت و تفکر انتقادی را پرورش می‌دهد.
-آگاهی اجتماعی و جهانی را افزایش می‌دهد.
-شهروندان مسئول و آگاه تربیت می‌کند.
-در نهایت، آموزش محرک پیشرفت و نوآوری است.`,
+        fullText: "آموزش افراد را با دانش و مهارت توانمند می‌سازد.\nفرصت‌های شغلی و رشد را فراهم می‌کند.\nیادگیری خلاقیت و تفکر انتقادی را پرورش می‌دهد.\nآگاهی اجتماعی و جهانی را افزایش می‌دهد.\nشهروندان مسئول و آگاه تربیت می‌کند.\nدر نهایت، آموزش محرک پیشرفت و نوآوری است.",
         date: "۱۸ اپریل ۲۰۲۶"
       }
     ]
   }
 };
 
+// متغیر برای نگهداری زبان فعلی
+let currentPageLang = 'en';
 
-// تابع ساخت کارت‌ها با همان استایل اصلی
-function renderCards(lang = "en") {
+// تابع ساخت کارت‌ها
+function renderCards(lang) {
   const container = document.getElementById("cards-container");
+  if (!container) return;
   container.innerHTML = "";
-  const cardsData = translations[lang].cards;
+  const cardsData = pageTranslations[lang].cards;
 
   cardsData.forEach(card => {
-    // کارت اصلی
     const cardElement = document.createElement("div");
     cardElement.style.position = "relative";
     cardElement.style.border = "1px solid #e2e8f0";
@@ -123,7 +238,6 @@ function renderCards(lang = "en") {
     cardElement.style.transition = "transform 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease";
     cardElement.style.cursor = "pointer";
 
-    // تصویر + overlay
     const imageWrapper = document.createElement("div");
     imageWrapper.style.position = "relative";
 
@@ -148,7 +262,6 @@ function renderCards(lang = "en") {
     gradientOverlay.style.opacity = "0";
     gradientOverlay.style.transition = "opacity 0.8s ease";
 
-    // تاریخ روی عکس
     const dateLabel = document.createElement("span");
     dateLabel.textContent = card.date;
     dateLabel.style.position = "absolute";
@@ -163,18 +276,13 @@ function renderCards(lang = "en") {
     dateLabel.style.zIndex = "2";
     dateLabel.style.transition = "transform 0.3s ease";
 
-    dateLabel.addEventListener("mouseenter", () => {
-      dateLabel.style.transform = "scale(1.08)";
-    });
-    dateLabel.addEventListener("mouseleave", () => {
-      dateLabel.style.transform = "scale(1)";
-    });
+    dateLabel.addEventListener("mouseenter", () => { dateLabel.style.transform = "scale(1.08)"; });
+    dateLabel.addEventListener("mouseleave", () => { dateLabel.style.transform = "scale(1)"; });
 
     imageWrapper.appendChild(img);
     imageWrapper.appendChild(gradientOverlay);
     imageWrapper.appendChild(dateLabel);
 
-    // عنوان
     const title = document.createElement("h3");
     title.textContent = card.title;
     title.style.fontSize = "1.25rem";
@@ -182,48 +290,40 @@ function renderCards(lang = "en") {
     title.style.color = "#000000";
     title.style.transition = "color 0.3s ease";
 
-    // متن کوتاه
     const shortText = document.createElement("p");
     shortText.textContent = card.text;
     shortText.style.color = "#475569";
     shortText.style.margin = "1.25rem";
-    shortText.style.whiteSpace = "pre-line"; // برای نمایش دو نیم خط
+    shortText.style.whiteSpace = "pre-line";
 
-    // متن کامل
     const extraText = document.createElement("p");
     extraText.textContent = card.fullText;
     extraText.style.color = "#475569";
     extraText.style.display = "none";
     extraText.style.margin = "1.25rem";
+    extraText.style.whiteSpace = "pre-line";
 
-    // خط جداکننده
     const hr = document.createElement("hr");
     hr.style.border = "none";
     hr.style.borderTop = "1px solid #e2e8f0";
     hr.style.margin = "1.25rem";
 
-    // دکمه Read more پایین وسط با آیکون
-  const readMoreBtn = document.createElement("span");
-readMoreBtn.textContent = translations[lang].readMore; // مقدار اولیه بر اساس زبان
-readMoreBtn.style.color = "#c08a02";
-readMoreBtn.style.fontWeight = "600";
-readMoreBtn.style.cursor = "pointer";
-readMoreBtn.style.display = "block";
-readMoreBtn.style.margin = "1.55rem auto"; // وسط چین
-readMoreBtn.style.textAlign = "center";
-
-
+    const readMoreBtn = document.createElement("span");
+    readMoreBtn.textContent = pageTranslations[lang].readMore;
+    readMoreBtn.style.color = "#c08a02";
+    readMoreBtn.style.fontWeight = "600";
+    readMoreBtn.style.cursor = "pointer";
+    readMoreBtn.style.display = "block";
+    readMoreBtn.style.margin = "1.55rem auto";
+    readMoreBtn.style.textAlign = "center";
 
     let expanded = false;
-readMoreBtn.addEventListener("click", () => {
-  expanded = !expanded;
-  extraText.style.display = expanded ? "block" : "none";
-  readMoreBtn.textContent = expanded
-    ? translations[lang].readLess
-    : translations[lang].readMore;
-});
+    readMoreBtn.addEventListener("click", () => {
+      expanded = !expanded;
+      extraText.style.display = expanded ? "block" : "none";
+      readMoreBtn.textContent = expanded ? pageTranslations[lang].readLess : pageTranslations[lang].readMore;
+    });
 
-    // افکت hover کارت
     cardElement.addEventListener("mouseenter", () => {
       gradientOverlay.style.opacity = "1";
       cardElement.style.borderColor = "#00c3ff";
@@ -239,67 +339,60 @@ readMoreBtn.addEventListener("click", () => {
       title.style.color = "#0f172a";
     });
 
-    // اضافه کردن همه بخش‌ها به کارت
     cardElement.appendChild(imageWrapper);
     cardElement.appendChild(title);
     cardElement.appendChild(shortText);
     cardElement.appendChild(extraText);
     cardElement.appendChild(hr);
     cardElement.appendChild(readMoreBtn);
-
     container.appendChild(cardElement);
   });
-
 }
 
-
-
-// تغییر زبان کل سایت
-function switchLanguage(lang) {
-  const data = translations[lang];
+// تابع تغییر زبان صفحه (فراخوانی از main.js)
+function switchPageLanguage(lang) {
+  const data = pageTranslations[lang];
+  if (!data) return;
+  currentPageLang = lang;
 
   // Hero
-  document.querySelector(".hero-title").textContent = data.heroTitle;
-  document.querySelector(".hero-text").textContent = data.heroText;
+  const heroTitle = document.querySelector(".hero-title");
+  const heroText = document.querySelector(".hero-text");
+  if (heroTitle) heroTitle.textContent = data.heroTitle;
+  if (heroText) heroText.textContent = data.heroText;
 
-  // Services
-  document.querySelector(".section-title").textContent = data.servicesTitle;
-  document.querySelector(".services-section p").textContent = data.servicesText;
+  // Services section
+  const sectionTitle = document.querySelector(".section-title");
+  const sectionText = document.querySelector(".services-section p");
+  if (sectionTitle) sectionTitle.textContent = data.servicesTitle;
+  if (sectionText) sectionText.textContent = data.servicesText;
 
   // CTA
-  document.querySelector(".cta-section h2").textContent = data.ctaTitle;
-  document.querySelector(".cta-section p").textContent = data.ctaText;
-  document.querySelector(".cta-buttons a.btn").textContent = data.ctaBtn1;
-  document.querySelector(".cta-buttons a.btn-alt").textContent = data.ctaBtn2;
-  // Read more buttons
-document.querySelectorAll(".read-more-btn").forEach(btn => {
-  btn.textContent = translations[lang].readMore;
-});
+  const ctaH2 = document.querySelector(".cta-section h2");
+  const ctaP = document.querySelector(".cta-section p");
+  const ctaBtn1 = document.querySelector(".cta-buttons a.btn");
+  const ctaBtnAlt = document.querySelector(".cta-buttons a.btn-alt");
+  if (ctaH2) ctaH2.textContent = data.ctaTitle;
+  if (ctaP) ctaP.textContent = data.ctaText;
+  if (ctaBtn1) ctaBtn1.textContent = data.ctaBtn1;
+  if (ctaBtnAlt) ctaBtnAlt.textContent = data.ctaBtn2;
 
-
-  // Cards
+  // کارت‌ها
   renderCards(lang);
 }
 
-// دکمه‌های تغییر زبان
-document.getElementById("btn-en").addEventListener("click", () => switchLanguage("en"));
-document.getElementById("btn-fa").addEventListener("click", () => switchLanguage("fa"));
-
-// بارگذاری پیش‌فرض انگلیسی
-switchLanguage("en");
-
-
-// این ساختار باتون است 
-const btn = document.getElementById("backToTopBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    btn.classList.add("show");
-  } else {
-    btn.classList.remove("show");
-  }
+// بارگذاری اولیه
+window.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('lang') || 'en';
+  switchPageLanguage(savedLang);
 });
 
-btn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// دکمه بالا
+const btn2 = document.getElementById("backToTopBtn2");
+if (btn2) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) { btn2.classList.add("show"); } 
+    else { btn2.classList.remove("show"); }
+  });
+  btn2.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+}
