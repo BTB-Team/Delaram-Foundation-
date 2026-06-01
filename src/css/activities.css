@@ -18,10 +18,6 @@
   --font-en:"Inter",sans-serif;
   --font-heading:"Poppins",sans-serif;
 }
-
-
-
-
  /* ============== HEADER CSS ============== */ 
  .navbar { position: fixed; 
   top: 0; 
@@ -258,6 +254,135 @@ margin-top: 90px; }
     transform: scale(1.1); } 
     
 @media (max-width: 768px) { .footer-container { grid-template-columns: 1fr; } }
+
+
+
+/* main cintainer styles */
+
+/*============== activities page css styles ==============*/
+.hero-section {
+  position: relative;
+  height: 780px;
+  overflow: hidden;
+}
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* لایه گرادینت از پایین به بالا */
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+/* متن روی عکس */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  border-radius: 10px;
+  animation: slideDown 1s ease forwards;
+}
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: #bf6901; /* خط خاکستری */
+  margin: 1rem auto;
+}
+.hero-text {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+}
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0a2540;
+ 
+}
+.card {
+  position: relative;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-fast);
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-500); /* تغییر رنگ border هنگام hover */
+}
+.card img {
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  width: 100%;
+  display: block;
+}
+/* تاریخ روی تصویر */
+.card .date-label {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: rgba(22, 58, 95, 0.8);
+  color: var(--text-white);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+.card h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-2);
+}
+.card p {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+.card .extra-text {
+  display: none;
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+}
+.card hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: var(--space-2) 0;
+}
+.read-more {
+  color: var(--primary-500);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+.read-more:hover {
+  color: var(--primary-600);
+}
+
+
+
+
 
 
 
