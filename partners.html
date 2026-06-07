@@ -24,61 +24,55 @@
 
 
 <body >
- <!-- ===== شروع هدر - این را در بالای body تمام صفحات کپی کنید ===== -->
-    <nav class="navbar" id="navbar">
-     <div class="container"> 
-
+ <!--navbar-section -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
     <!-- لوگو -->
-     <a href="index.html" class="logo"> 
-      <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" /> </a> 
-      
-<!-- منوی دسکتاپ --> 
-<ul class="menu">
-<li><a href="index.html" class="nav-link" data-i18n="home">Home</a></li> 
-<li><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
-<li><a href="services.html" class="nav-link" data-i18n="services">Services</a></li> 
-<li><a href="activities.html" class="nav-link" data-i18n="activities">Activities</a></li> 
-<li><a href="partners.html" class="nav-link" data-i18n="partners">Partners</a></li>
-<li><a href="blog.html" class="nav-link" data-i18n="blog">Blog</a></li>
-<li><a href="contact.html" class="nav-link" data-i18n="contact">Contact</a></li> 
-</ul> 
-      
-      <!-- دکمه‌ها و زبان -->
-  <div class="actions"> 
-    <div class="lang-switch"> 
-      <a href="?lang=en" class="active" data-i18n="lang_en">EN</a> 
-      <a href="?lang=da" data-i18n="lang_da">دری</a> </div> 
-      <a href="membership.html" class="btn join" data-i18n="join_us">Join Us</a> 
-      <a href="donate.html" class="btn donate" data-i18n="donate">Donate ♡</a> </div> 
-            
-        <!-- دکمه منوی موبایل --> 
-  <button class="menu-toggle" onclick="toggleMobileMenu()"> 
-      <span class="bar"></span> 
-      <span class="bar"></span> 
-      <span class="bar"></span> </button> </div> 
-              
-        <!-- منوی موبایل --> 
-    <div id="mobile-menu" class="mobile-menu"> 
-    <div class="lang-switch"> <a href="?lang=en" class="active" data-i18n="lang_en">EN</a> 
-    <a href="?lang=da" data-i18n="lang_da">دری</a> </div> 
-     <a href="index.html" class="nav-link" data-i18n="home">Home</a>
-     <a href="about.html" class="nav-link" data-i18n="about">About</a> 
-     <a href="services.html" class="nav-link" data-i18n="services">Services</a> 
-     <a href="activities.html" class="nav-link" data-i18n="activities">Activities</a> 
-     <a href="partners.html" class="nav-link" data-i18n="partners">Partners</a> 
-     <a href="blog.html" class="nav-link" data-i18n="blog">Blog</a> 
-     <a href="contact.html" class="nav-link" data-i18n="contact">Contact</a> 
-
-     <div class="mobile-actions"> 
-     <a href="membership.html" class="btn join" data-i18n="join_us">Join Us</a>
-     <a href="donate.html" class="btn donate" data-i18n="donate">Donate ♡</a> </div> </div> 
-     
-     <!-- کرسر سفارشی -->
-       <div id="cursor-outline"></div>
-        <div id="cursor-dot"></div> 
-     </nav>
-    <!-- ===== پایان هدر ===== -->
-
+    <a href="index.html" class="nav-logo">
+      <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="nav-logo-img">
+      <span class="nav-logo-text" id="brand-name">ECAO</span>
+    </a>
+    <!-- منو اصلی -->
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="home">Home</a></li>
+      <li><a href="about.html" data-i18n="about">About</a></li>
+      <li><a href="services.html" data-i18n="services">Services</a></li>
+      <li><a href="activities.html" data-i18n="activities">Activities</a></li>
+      <li><a href="partners.html" data-i18n="partners">Partners</a></li>
+      <li><a href="blog.html" data-i18n="blog">Blog</a></li>
+      <li><a href="contact.html" data-i18n="contact">Contact</a></li>
+    </ul>
+    <!-- دکمه‌ها و زبان‌ها -->
+    <div class="nav-actions">
+      <button class="lang-btn active" id="enBtn">EN</button>
+      <button class="lang-btn" id="faBtn">دری</button>
+      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
+      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
+    </div>
+    <!-- همبرگر منو موبایل -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- منوی موبایل -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-lang-switch">
+      <button class="lang-btn active" id="enBtnMob">EN</button>
+      <button class="lang-btn" id="faBtnMob">دری</button>
+    </div>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About</a>
+    <a href="services.html" data-i18n="services">Services</a>
+    <a href="activities.html" data-i18n="activities">Activities</a>
+    <a href="partners.html" data-i18n="partners">Partners</a>
+    <a href="blog.html" data-i18n="blog">Blog</a>
+    <a href="contact.html" data-i18n="contact">Contact</a>
+    <div class="mobile-actions">
+      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
+      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
+    </div>
+  </div>
+</nav>
 
 
   <section class="hero-section">
@@ -93,47 +87,28 @@
 Collaborating with global organizations to create lasting impact since 2014    </p>
   </div>
 </section>
+
+
+
+<!-- کارت‌ها -->
 <section class="card-section">
-
-    <!-- Buttons -->
   <div class="lang-buttons">
-
-    <button class="English" onclick="changeLanguage('en')">
-      English
-    </button>
-
-    <button class="farsi" onclick="changeLanguage('dr')">
-      دری
-    </button>
-
+    <button class="English" onclick="changeLanguage('en')">English</button>
+    <button class="farsi" onclick="changeLanguage('dr')">دری</button>
   </div>
 
- 
-   
-    <h2 class="hero-title2" id="title2">We are working tigether on project</h2>
-    <div class="hero-line2"></div>
-    <p class="hero-text2" id="description2">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum optio dolore mollitia consequatur et hic.
-    </p>
-     <div class="partner-card card text-center">
-  <div class="partner-card__icon">
-    <img src="./src/assets/svg/icon.svg" alt="IOM Afghanistan">
-  </div>
+  <h2 class="hero-title2" id="title2">We are working together on project</h2>
+  <div class="hero-line2"></div>
 
-  <h3 class="partner-card__title" id="title3">
-     Afghanistan
-  </h3>
-
-  <p class="partner-card__description" id="description3">
-    International Organization for Migration working with ECAO on shelter projects.
+  <p class="hero-text2" id="description2">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum optio dolore mollitia consequatur et hic.
   </p>
 
-  <span class="partner-card__status" id="span1">
-    Active partner
-  </span> 
-  </div>
-    
-  </section>
+  <div id="partners-page-cards-container" class="partners-grid"></div>
+</section>
+
+
+
 
 <section class="cta-section">
   <h2 id="title4">Would you like to interested with us</h2>
@@ -144,62 +119,59 @@ Collaborating with global organizations to create lasting impact since 2014    <
 </section>
 
 
-<!--Footer-Section-->
-    <footer class="footer"> 
-<div class="footer-container"> 
-  
-  <!-- برند --> 
-  <div class="footer-brand"> 
-  <a href="index.html" class="logo-link"> 
-  <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" class="logo" /> </a> 
-  <p class="brand-text" data-i18n="footer_description"> ECAO is dedicated to creating positive change through community empowerment and sustainable development. </p> 
- 
- 
- <div class="social-icons">
-  <a href="https://www.facebook.com/profile.php?id=61578778565147" target="_blank" rel="noopener noreferrer" class="facebook"> 
-  <span class="material-icons">facebook</span> </a> 
-  <a href="donate.html" class="heart"> 
-  <span class="material-icons">favorite</span> </a> </div> </div> 
-  
-  <!-- لینک‌های سریع --> 
-  <div class="footer-nav"> 
-  <h3 data-i18n="quick_links">Quick Links</h3> 
-  <ul> 
-    <li><a href="index.html" data-i18n="home">Home</a></li> 
-    <li><a href="about.html" data-i18n="about">About</a></li>
-    <li><a href="services.html" data-i18n="services">Services</a></li> 
-    <li><a href="activities.html" data-i18n="activities">Activities</a></li> 
-    <li><a href="partners.html" data-i18n="partners">Partners</a></li> 
-  </ul>
- </div> 
- 
- <!-- تماس --> 
-  <div class="footer-contact"> 
-    <h3 data-i18n="contact">Contact</h3> 
-    
-    <ul> 
-      <li><a href="https://www.google.com/maps/search/?api=1&query=Kabul,+Afghanistan" target="_blank" rel="noopener noreferrer" data-i18n="location">Kabul, Afghanistan</a></li> 
-      <li><a href="tel:+93764348000" data-i18n="phone">+93 764 348 000</a></li> 
-      <li><a href="mailto:info@ecao.ngo" data-i18n="email">info@ecao.ngo</a></li> </ul> </div> 
-      
-      <!-- حمایت از ما --> 
-       <div class="footer-cta"> 
-        <h3 data-i18n="support_us">Support Us</h3> 
-        <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p> 
-        <a href="donate.html" class="donate-btn" data-i18n="donate_now">Donate Now</a> </div> </div> 
-        <div class="footer-bottom"> <p class="developer" data-i18n="developer">Design and Developed by Taqi Raya(BTB)</p> 
-        <p class="copyright" data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p> </div> </footer> 
+ <!-- فوتر -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- سمت چپ: Support Us و توضیحات -->
+    <div class="footer-brand fade-in-up stagger-1">
+      <div class="footer-logo">
+        <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="footer-logo-img">
         
-        <!-- دکمه برگشت به بالا --> 
-         <button id="backToTopBtn" class="back-to-top" data-i18n="back_top">↑</button> 
-         <!-- ===== پایان فوتر ===== -->
-          
+      </div>
+      <p data-i18n="footer_description">ECAO is dedicated to creating positive change through community empowerment and sustainable development.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Donate">♡</a>
+      </div>
+    </div>
+    <!-- سمت راست: لینک‌ها و تماس -->
+    <div class="footer-nav fade-in-up stagger-2">
+      <h3 data-i18n="quick_links">Quick Links</h3>
+      <ul>
+        <li><a href="index.html" data-i18n="home">Home</a></li>
+        <li><a href="about.html" data-i18n="about">About</a></li>
+        <li><a href="services.html" data-i18n="services">Services</a></li>
+        <li><a href="activities.html" data-i18n="activities">Activities</a></li>
+        <li><a href="partners.html" data-i18n="partners">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact fade-in-up stagger-3">
+      <h3 data-i18n="contact">Contact</h3>
+      <ul>
+        <li><a href="contact.html" data-i18n="location">Kabul, Afghanistan</a></li>
+        <li><a href="tel:+93764348000">+93 764 348 000</a></li>
+        <li><a href="mailto:info@ecao.ngo">info@ecao.ngo</a></li>
+      </ul>
+    </div>
+    <!-- حمایت -->
+    <div class="footer-cta fade-in-up stagger-4">
+      <h3 data-i18n="support_us">Support Us</h3>
+      <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p>
+      <a href="donate.html" class="footer-donate-btn" data-i18n="donate_now">Donate Now ♡</a>
+    </div>
+  </div>
+  <!-- پایین فوتر -->
+  <div class="footer-bottom">
+    <p data-i18n="developer">Design and Developed by Taqi Raya (BTB)</p>
+    <p data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p>
+  </div>
+</footer>
 
-
-
+<!-- دکمه بازگشت به بالا -->
+<button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
 
 
     <script src="./src/js/main.js" defer></script>
-    <script src="./src/js/partners.js" defer></script>
+<script src="./src/js/partners.js" defer></script>
 </body>
 </html>

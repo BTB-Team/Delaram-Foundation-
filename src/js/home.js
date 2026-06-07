@@ -1,67 +1,4 @@
-// Mobile Menu Toggle
-window.toggleMobileMenu = function() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-        menu.classList.toggle('show');
-    }
-};
 
-// Navbar scroll effect
-window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
-    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-    if (navbar) {
-        if (scrollPos > 50) {
-            navbar.classList.add('shadow-lg');
-            navbar.style.background = 'rgba(255,255,255,0.95)';
-        } else {
-            navbar.classList.remove('shadow-lg');
-            navbar.style.background = 'rgba(255,255,255,0.7)';
-        }
-    }
-});
-
-// Custom Cursor Logic
-const cursorOutline = document.getElementById('cursor-outline');
-const cursorDot = document.getElementById('cursor-dot');
-
-if (cursorOutline && cursorDot) {
-    window.addEventListener('mousemove', function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-        cursorDot.style.opacity = '1';
-
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-        cursorOutline.style.opacity = '1';
-    });
-
-    const links = document.querySelectorAll('a, button, .clickable');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursorOutline.style.width = '60px';
-            cursorOutline.style.height = '60px';
-            cursorOutline.style.borderColor = '#b18a5e';
-            cursorDot.style.backgroundColor = '#b18a5e';
-        });
-        link.addEventListener('mouseleave', () => {
-            cursorOutline.style.width = '40px';
-            cursorOutline.style.height = '40px';
-            cursorOutline.style.borderColor = '#009fe3';
-            cursorDot.style.backgroundColor = '#009fe3';
-        });
-    });
-
-    document.addEventListener('mouseleave', () => {
-        cursorOutline.style.opacity = '0';
-        cursorDot.style.opacity = '0';
-    });
-}
 
 // اسلایدر اصلی
 const mainSwiper = new Swiper('.heroSwiper', {
@@ -82,23 +19,33 @@ const mainSwiper = new Swiper('.heroSwiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+    type: 'bullets',
   },
 });
 
 // Back to Top Button
 const backToTopBtn = document.getElementById("backToTopBtn");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTopBtn.style.opacity = "1";
-    backToTopBtn.style.visibility = "visible";
-  } else {
-    backToTopBtn.style.opacity = "0";
-    backToTopBtn.style.visibility = "hidden";
-  }
-});
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.opacity = "1";
+      backToTopBtn.style.visibility = "visible";
+    } else {
+      backToTopBtn.style.opacity = "0";
+      backToTopBtn.style.visibility = "hidden";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+
+
+
+
 
 // ترجمه‌ها - یک آبجکت واحد و کامل
 const translations = {
@@ -208,6 +155,18 @@ document.querySelectorAll('.lang-switch a').forEach(link => {
     setLanguage(lang);
     document.querySelectorAll('.lang-switch a').forEach(l => l.classList.remove('active'));
     link.classList.add('active');
+    
+    // ⭐ رندر مجدد کارت‌های بلاگ و سرویس با زبان جدید ⭐
+    setTimeout(() => {
+      if (typeof renderHomePostCards === 'function') {
+        console.log("🔄 رندر مجدد کارت‌های Blog با زبان جدید");
+        renderHomePostCards();
+      }
+      if (typeof renderHomeServiceCards === 'function') {
+        console.log("🔄 رندر مجدد کارت‌های Services با زبان جدید");
+        renderHomeServiceCards();
+      }
+    }, 200);
   });
 });
 
@@ -226,3 +185,157 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ⭐⭐⭐ صدا زدن فانکشن نمایش 3 پست آخر ⭐⭐⭐
+window.addEventListener('load', () => {
+  console.log("🔵 صفحه Home کامل بارگذاری شد");
+
+
+
+  
+window.addEventListener('load', () => {
+  if (typeof renderHomeServiceCards === 'function') {
+    renderHomeServiceCards();
+  }
+});
+  
+  // چک کردن وجود ARTICLES
+  if (typeof ARTICLES !== 'undefined') {
+    console.log("✅ ARTICLES یافت شد:", ARTICLES.length, "پست");
+  } else {
+    console.error("❌ ARTICLES یافت نشد!");
+  }
+
+  // تعریف تابع renderHomeServiceCards
+  function renderHomeServiceCards() {
+    console.log("🔵 renderHomeServiceCards فراخوانی شد (صفحه Home)");
+
+    const container = document.getElementById('home-services-container');
+    if (!container) {
+      console.error("❌ عنصر 'home-services-container' پیدا نشد!");
+      return;
+    }
+
+    // حذف کارت‌های قبلی
+    container.innerHTML = '';
+
+    const lang = localStorage.getItem('lang') || 'en';
+
+    // فرض بر این است که SERVICES در جایی قبل تعریف شده است
+    if (!Array.isArray(SERVICES)) {
+      console.error("❌ متغیر SERVICES تعریف نشده یا آرایه نیست");
+      return;
+    }
+
+    const lastServices = SERVICES.slice(-3); // فقط 3 سرویس آخر
+
+    lastServices.forEach((service, index) => {
+      console.log(`📝 در حال رندر سرویس ${index + 1}:`, service.title_en);
+
+      const card = document.createElement('div');
+      card.className = 'home-service-card';
+      card.onclick = () => {
+        window.location.href = `services.html`;
+      };
+
+      // ساختار داخلی کارت
+      card.innerHTML = `
+        <div class="home-card-img">
+          <img src="${service.image}" alt="${lang === 'fa' ? service.title_fa : service.title_en}">
+        </div>
+        <div class="home-card-body">
+          <span class="home-card-tag">${lang === 'fa' ? service.date_fa : service.date_en}</span>
+          <h3 class="home-card-title">${lang === 'fa' ? service.title_fa : service.title_en}</h3>
+          <p class="home-card-desc">${lang === 'fa' ? service.text_fa : service.text_en}</p>
+          <button class="read-more-btn">
+            ${lang === 'fa' ? 'بیشتر بدانید' : 'Learn More'} 
+            <span class="material-icons">arrow_forward</span>
+          </button>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  // فراخوانی تابع پس از لود صفحه
+  renderHomeServiceCards();
+});
+
+
+
+
+
+
+
+
+
+
+const homePartnerCardsData = [
+  {
+    icon: "./src/assets/svg/icon.svg",
+    titleEn: "Afghanistan",
+    titleDr: "افغانستان",
+    descriptionEn: "International Organization for Migration working with ECAO on shelter projects.",
+    descriptionDr: "سازمان بین‌المللی مهاجرت با ECAO روی پروژه‌های سرپناه همکاری می‌کند.",
+    statusEn: "Active partner",
+    statusDr: "همکار فعال"
+  },
+  {
+    icon: "./src/assets/svg/icon.svg",
+    titleEn: "Education Partner",
+    titleDr: "همکار آموزشی",
+    descriptionEn: "Supporting education programs and learning opportunities for young people.",
+    descriptionDr: "حمایت از برنامه‌های آموزشی و فرصت‌های یادگیری برای جوانان.",
+    statusEn: "Active partner",
+    statusDr: "همکار فعال"
+  },
+  {
+    icon: "./src/assets/svg/icon.svg",
+    titleEn: "Community Partner",
+    titleDr: "همکار اجتماعی",
+    descriptionEn: "Working together to strengthen communities and create lasting impact.",
+    descriptionDr: "همکاری برای تقویت جوامع و ایجاد تاثیر ماندگار.",
+    statusEn: "Active partner",
+    statusDr: "همکار فعال"
+  }
+];
+
+function renderHomePartnerCards(lang = "en") {
+  const container = document.getElementById("home-partners-container");
+  if (!container) return;
+
+  container.innerHTML = homePartnerCardsData.map(card => `
+    <div class="partner-card">
+      <div class="partner-card__icon">
+        <img src="${card.icon}" alt="${lang === "dr" ? card.titleDr : card.titleEn}">
+      </div>
+      <h3 class="partner-card__title">
+        ${lang === "dr" ? card.titleDr : card.titleEn}
+      </h3>
+      <p class="partner-card__description">
+        ${lang === "dr" ? card.descriptionDr : card.descriptionEn}
+      </p>
+      <span class="partner-card__status">
+        ${lang === "dr" ? card.statusDr : card.statusEn}
+      </span>
+    </div>
+  `).join("");
+}
+
+window.addEventListener("load", () => {
+  const savedLang = localStorage.getItem("lang") || "en";
+  renderHomePartnerCards(savedLang);
+});

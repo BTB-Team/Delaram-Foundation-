@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delaram | Services</title>
+  <title>Delaram | Index</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,70 +18,68 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./src/css/style.css" />
+  <link rel="stylesheet" href="./src/css/home.js" />
   <link rel="stylesheet" href="./src/css/home.css" />
-  <link rel="stylesheet" href="./src/css/navbar.css" />
 
-  
 </head>
+
+
+
+<!-- ============== Marzeia haydari  page ==============  -->
+
+
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <!-- Logo -->
-      <a href="/" class="logo">
-        <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" />
-      </a>
-
-      <!-- Desktop Menu -->
-     <ul class="menu">
-  <li><a href="index.html" class="nav-link active" data-i18n="home">Home</a></li>
-  <li><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
-  <li><a href="services.html" class="nav-link" data-i18n="services">Services</a></li>
-  <li><a href="activities.html" class="nav-link" data-i18n="activities">Activities</a></li>
-  <li><a href="partners.html" class="nav-link" data-i18n="partners">Partners</a></li>
-  <li><a href="blog.html" class="nav-link" data-i18n="blog">Blog</a></li>
-  <li><a href="contact.html" class="nav-link" data-i18n="contact">Contact</a></li>
-</ul>
-      <!-- CTA & Language -->
-      <div class="actions">
-        <div class="lang-switch">
-          <a href="?lang=en" class="active" data-i18n="lang_en">EN</a>
-          <a href="?lang=da" data-i18n="lang_da">دری</a>
-        </div>
-        <a href="/membership" class="btn join" data-i18n="join_us">Join Us</a>
-        <a href="/donate" class="btn donate" data-i18n="donate">Donate ♡</a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button class="menu-toggle" onclick="toggleMobileMenu()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+ 
+<!--navbar-section -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <!-- لوگو -->
+    <a href="index.html" class="nav-logo">
+      <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="nav-logo-img">
+      <span class="nav-logo-text" id="brand-name">ECAO</span>
+    </a>
+    <!-- منو اصلی -->
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="home">Home</a></li>
+      <li><a href="about.html" data-i18n="about">About</a></li>
+      <li><a href="services.html" data-i18n="services">Services</a></li>
+      <li><a href="activities.html" data-i18n="activities">Activities</a></li>
+      <li><a href="partners.html" data-i18n="partners">Partners</a></li>
+      <li><a href="blog.html" data-i18n="blog">Blog</a></li>
+      <li><a href="contact.html" data-i18n="contact">Contact</a></li>
+    </ul>
+    <!-- دکمه‌ها و زبان‌ها -->
+    <div class="nav-actions">
+      <button class="lang-btn active" id="enBtn">EN</button>
+      <button class="lang-btn" id="faBtn">دری</button>
+      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
+      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu hidden">
-      <div class="lang-switch">
-        <a href="?lang=en" class="active" data-i18n="lang_en">EN</a>
-        <a href="?lang=da" data-i18n="lang_da">دری</a>
-      </div>
-      <a href="/" class="nav-link" data-i18n="home">Home</a>
-      <a href="/about" class="nav-link" data-i18n="about">About</a>
-      <a href="/services" class="nav-link" data-i18n="services">Services</a>
-      <a href="/activity" class="nav-link" data-i18n="activities">Activities</a>
-      <a href="/partnership" class="nav-link" data-i18n="partners">Partners</a>
-      <a href="/blog" class="nav-link" data-i18n="blog">Blog</a>
-      <a href="/contact" class="nav-link" data-i18n="contact">Contact</a>
-      <div class="mobile-actions">
-        <a href="/membership" class="btn join" data-i18n="join_us">Join Us</a>
-        <a href="/donate" class="btn donate" data-i18n="donate">Donate ♡</a>
-      </div>
+    <!-- همبرگر منو موبایل -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- منوی موبایل -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-lang-switch">
+      <button class="lang-btn active" id="enBtnMob">EN</button>
+      <button class="lang-btn" id="faBtnMob">دری</button>
     </div>
-    <!-- Custom Cursor -->
-    <div id="cursor-outline"></div>
-    <div id="cursor-dot"></div>
-  </nav>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="about.html" data-i18n="about">About</a>
+    <a href="services.html" data-i18n="services">Services</a>
+    <a href="activities.html" data-i18n="activities">Activities</a>
+    <a href="partners.html" data-i18n="partners">Partners</a>
+    <a href="blog.html" data-i18n="blog">Blog</a>
+    <a href="contact.html" data-i18n="contact">Contact</a>
+    <div class="mobile-actions">
+      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
+      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
+    </div>
+  </div>
+</nav>
 
   <!-- بخش اسلایدر اصلی -->
   <section class="hero-slider">
@@ -90,7 +88,7 @@
 
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <img src="./src/images/OIP (1).webp" alt="About" />
+          <img src="./src/assets/images/students.webp" alt="About" />
           <div class="overlay">
             <h2 data-i18n="about">About</h2>
             <p data-i18n="learn_more">Learn who we are</p>
@@ -100,7 +98,7 @@
 
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <img src="./src/images/photo-1488521787991-ed7bbaae773c.webp" alt="Vision" />
+          <img src="./src/assets/images/photo-1488521787991-ed7bbaae773c.webp" alt="Vision" />
           <div class="overlay">
             <h2 data-i18n="visionTitle">Vision</h2>
             <p data-i18n="Our_Future_Goals">Our future goals</p>
@@ -110,7 +108,7 @@
 
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <img src="./src/images/students.webp" alt="Mission" />
+          <img src="./src/assets/images/students.webp" alt="Mission" />
           <div class="overlay">
             <h2 data-i18n="Mission">Mission</h2>
             <p data-i18n="What_We_Do">What we do daily</p>
@@ -147,7 +145,7 @@
       </div>
       <!-- تصویر -->
       <div>
-        <img src="./src/images/photo-1488521787991-ed7bbaae773c.webp" alt="Smiling children" class="img" />
+        <img src="./src/assets/images/photo-1488521787991-ed7bbaae773c.webp" alt="Smiling children" class="img" />
       </div>
     </div>
   </section>
@@ -193,6 +191,76 @@
   </section>
 
 
+
+
+  <!-- ===== بخش نمایش 3 سرویس آخر ===== -->
+<section class="latest-services">
+  <div class="Parent-container">
+    <h2 class="section-title">
+      <span class="en-only">Our Latest Services</span>
+      <span class="fa-only">آخرین خدمات ما</span>
+    </h2>
+    <div class="section-underline"></div>
+    
+    <!-- این div کارت‌های سرویس را نمایش می‌دهد -->
+    <div id="home-services-container"></div>
+    
+    <div class="view-all-btn-wrapper">
+      <a href="./services.html" class="btn-view-all">
+        <span class="en-only">View All Services →</span>
+        <span class="fa-only">مشاهده همه خدمات ←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== بخش نمایش 3 فعالیت آخر ===== -->
+<section class="latest-activities">
+  <div class="Parent-container">
+    <h2 class="section-title">
+      <span class="en-only">Latest Activities</span>
+      <span class="fa-only">آخرین فعالیت‌ها</span>
+    </h2>
+    <div class="section-underline"></div>
+    
+    <!-- این div کارت‌های فعالیت را نمایش می‌دهد -->
+    <div id="home-activities-container"></div>
+    
+    <div class="view-all-btn-wrapper">
+      <a href="./activities.html" class="btn-view-all">
+        <span class="en-only">View All Activities →</span>
+        <span class="fa-only">مشاهده همه فعالیت‌ها ←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+ <!-- این div کارت‌های partners را نمایش می‌دهد -->
+  
+<section class="latest-partners">
+  <div class="Parent-container">
+    <h2 class="section-title">
+      <span class="en-only">Latest Partners</span>
+      <span class="fa-only">آخرین همکاران</span>
+    </h2>
+    <div class="section-underline"></div>
+
+    <div id="home-partners-container" class="home-partners-grid"></div>
+
+    <div class="view-all-btn-wrapper">
+      <a href="./partners.html" class="btn-view-all">
+        <span class="en-only">View All Partners →</span>
+        <span class="fa-only">مشاهده همه همکاران ←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- ===== بخش نمایش 3 پست آخر بلاگ ===== -->
 <section class="latest-blog-posts">
   <div class="Parent-container">
@@ -214,189 +282,93 @@
   </div>
 </section>
 
-  <!-- پاورقی (فوتر) -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- برند -->
-      <div class="footer-brand">
-        <a href="/" class="logo-link">
-          <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" class="logo" />
-        </a>
-        <p class="brand-text" data-i18n="footer_description">
-          ECAO is dedicated to creating positive change through community empowerment and sustainable development.
-        </p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61578778565147" target="_blank" class="facebook">
-            <span class="material-icons">facebook</span>
-          </a>
-          <a href="/donate" class="heart">
-            <span class="material-icons">favorite</span>
-          </a>
-        </div>
-      </div>
-      <!-- لینک‌های سریع -->
-      <div class="footer-nav">
-        <h3 data-i18n="quick_links">Quick Links</h3>
-        <ul>
-          <li><a href="/" data-i18n="home">Home</a></li>
-          <li><a href="/about" data-i18n="about">About</a></li>
-          <li><a href="/services" data-i18n="services">Services</a></li>
-          <li><a href="/activity" data-i18n="activities">Activities</a></li>
-          <li><a href="/partnership" data-i18n="partners">Partners</a></li>
-        </ul>
-      </div>
-      <!-- تماس -->
-      <div class="footer-contact">
-        <h3 data-i18n="contact">Contact</h3>
-        <ul>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Kabul,+Afghanistan" target="_blank" data-i18n="location">Kabul, Afghanistan</a></li>
-          <li><a href="tel:+93764348000" data-i18n="phone">+93 764 348 000</a></li>
-          <li><a href="mailto:info@ecao.ngo" data-i18n="email">info@ecao.ngo</a></li>
-        </ul>
-      </div>
-      <!-- حمایت از ما -->
-      <div class="footer-cta">
-        <h3 data-i18n="support_us">Support Us</h3>
-        <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p>
-        <a href="/donate" class="donate-btn" data-i18n="donate_now">Donate Now</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="developer" data-i18n="developer">Design and Developed by Taqi Raya(BTB)</p>
-      <p class="copyright" data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <!-- دکمه برگرد به بالا -->
+
+<!-- footer-section -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- سمت چپ: Support Us و توضیحات -->
+    <div class="footer-brand fade-in-up stagger-1">
+      <div class="footer-logo">
+        <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="footer-logo-img">
+      </div>
+      <p data-i18n="footer_description">ECAO is dedicated to creating positive change through community empowerment and sustainable development.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Donate">♡</a>
+      </div>
+    </div>
+    <!-- سمت راست: لینک‌ها و تماس -->
+    <div class="footer-nav fade-in-up stagger-2">
+      <h3 data-i18n="quick_links">Quick Links</h3>
+      <ul>
+        <li><a href="index.html" data-i18n="home">Home</a></li>
+        <li><a href="about.html" data-i18n="about">About</a></li>
+        <li><a href="services.html" data-i18n="services">Services</a></li>
+        <li><a href="activities.html" data-i18n="activities">Activities</a></li>
+        <li><a href="partners.html" data-i18n="partners">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact fade-in-up stagger-3">
+      <h3 data-i18n="contact">Contact</h3>
+      <ul>
+        <li><a href="contact.html" data-i18n="location">Kabul, Afghanistan</a></li>
+        <li><a href="tel:+93764348000">+93 764 348 000</a></li>
+        <li><a href="mailto:info@ecao.ngo">info@ecao.ngo</a></li>
+      </ul>
+    </div>
+    <!-- حمایت -->
+    <div class="footer-cta fade-in-up stagger-4">
+      <h3 data-i18n="support_us">Support Us</h3>
+      <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p>
+      <a href="donate.html" class="footer-donate-btn" data-i18n="donate_now">Donate Now ♡</a>
+    </div>
+  </div>
+  <!-- پایین فوتر -->
+  <div class="footer-bottom">
+    <p data-i18n="developer">Design and Developed by Taqi Raya (BTB)</p>
+    <p data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!--button-backToTop-->
   <button id="backToTopBtn" class="back-to-top" data-i18n="back_top">↑</button>
 
-  <!-- اسکریپت‌های جاوااسکریپت -->
+
+  <!-- اسکریپت‌های اصلی -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-      <script src="./src/js/blog.js"></script>
   <script src="./src/js/script.js"></script>
   <script src="./src/js/home.js"></script>
+  <script src="./src/js/blog.js"></script>
+  <script src="./src/js/activities.js"></script>
+  <script src="./src/js/services.js"></script>
+  <script src="./src/js/partners.js"></script>
   
+
+  <!-- کال کردن توابع رندر -->
   <script>
-    // صدا زدن فانکشن نمایش 3 پست آخر
-    window.addEventListener('load', () => {
-      console.log("🔵 صفحه Home کامل بارگذاری شد");
-      
-      // چک کردن وجود ARTICLES
-      if (typeof ARTICLES !== 'undefined') {
-        console.log("✅ ARTICLES یافت شد:", ARTICLES.length, "پست");
-      } else {
-        console.error("❌ ARTICLES یافت نشد!");
+  console.log("🟢 شروع رندر کارت‌ها در Index");
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      if (typeof renderHomeServiceCards === "function") {
+        renderHomeServiceCards();
       }
-      
-      // چک کردن وجود فانکشن
-      if (typeof renderHomePostCards === 'function') {
-        console.log("✅ فانکشن renderHomePostCards یافت شد");
-        renderHomePostCards(); // ⭐ اینجا صدا زده می‌شود ⭐
-      } else {
-        console.error("❌ فانکشن renderHomePostCards یافت نشد!");
+
+      if (typeof renderHomeActivityCards === "function") {
+        renderHomeActivityCards();
       }
-    });
-    
-    // رندر مجدد هنگام تغییر زبان
-    document.querySelectorAll('.lang-switch a').forEach(link => {
-      link.addEventListener('click', () => {
-        setTimeout(() => {
-          if (typeof renderHomePostCards === 'function') {
-            console.log("🔄 رندر مجدد کارت‌ها با زبان جدید");
-            renderHomePostCards(); // ⭐ اینجا هم صدا زده می‌شود ⭐
-          }
-        }, 200);
-      });
-    });
-  </script>
-  
-  <!-- ترجمه‌ها و اسکریپت‌های مربوط به زبان -->
-  <script>
-    const translations = {
-      en: {
-        home: "Home",
-        about: "About",
-        services: "Services",
-        activities: "Activities",
-        partners: "Partners",
-        blog: "Blog",
-        contact: "Contact",
-        footer_description: "ECAO is dedicated to creating positive change through community empowerment and sustainable development.",
-        quick_links: "Quick Links",
-        location: "Kabul, Afghanistan",
-        phone: "+93 764 348 000",
-        email: "info@ecao.ngo",
-        support_us: "Support Us",
-        support_description: "Your contribution can change lives for thousands of Afghans in need.",
-        donate_now: "Donate Now",
-        developer: "Design and Developed by Taqi Raya(BTB)",
-        copyright: "© 2014 - 2026 ECAO. All rights reserved.",
-        back_top: "↑",
-        lang_en: "EN",
-        lang_da: "دری",
-        join_us: "Join Us",
-        donate: "Donate ♡"
-      },
-      da: {
-        home: "خانه",
-        about: "در باره",
-        services: "خدمات",
-        activities: "فعالیت‌ها",
-        partners: "شریک‌ها",
-        blog: "وبلاگ",
-        contact: "تماس با ما",
-        footer_description: "ای‌سی‌ای‌او متعهد به ایجاد تغییر مثبت از طریق توانمندسازی جامعه و توسعه پایدار است.",
-        quick_links: "لینک‌های سریع",
-        location: "کابل، افغانستان",
-        phone: "+93 764 348 000",
-        email: "info@ecao.ngo",
-        support_us: "حمایت از ما",
-        support_description: "سهولت شما می‌تواند زندگی‌های هزاران افغان نیازمند را تغییر دهد.",
-        donate_now: "همین حالا کمک کنید",
-        developer: "طراحی و توسعه توسط تقی رایا (BTB)",
-        copyright: "© 2014 - 2026 ای‌سی‌ای‌او. تمامی حقوق محفوظ است.",
-        back_top: "↑",
-        lang_en: "EN",
-        lang_da: "دری",
-        join_us: "عضویت",
-        donate: "Donate ♡"
+
+      if (typeof renderHomePartnerCards === "function") {
+        renderHomePartnerCards("en");
       }
-    };
 
-    function setLanguage(lang) {
-      if (!translations[lang]) return;
-      document.querySelectorAll('[data-i18n]').forEach(elem => {
-        const key = elem.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          elem.innerText = translations[lang][key];
-        }
-      });
-    }
-
-    document.querySelectorAll('.lang-switch a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = link.getAttribute('href').split('=')[1];
-        localStorage.setItem('lang', lang);
-        setLanguage(lang);
-        document.querySelectorAll('.lang-switch a').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-
-    window.onload = () => {
-      const savedLang = localStorage.getItem('lang') || 'en';
-      setLanguage(savedLang);
-      document.querySelectorAll('.lang-switch a').forEach(link => {
-        if (link.getAttribute('href').includes(savedLang)) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    };
-  </script>
-
-  
+      if (typeof renderHomePostCards === "function") {
+        renderHomePostCards();
+      }
+    }, 300);
+  });
+</script>
 </body>
 </html>
