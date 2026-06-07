@@ -24,335 +24,123 @@
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <!-- لوگو -->
-    <a href="index.html" class="nav-logo">
-      <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="nav-logo-img">
-      <span class="nav-logo-text" id="brand-name">ECAO</span>
-    </a>
-    <!-- منو اصلی -->
-    <ul class="nav-menu">
-      <li><a href="index.html" data-i18n="home">Home</a></li>
-      <li><a href="about.html" data-i18n="about">About</a></li>
-      <li><a href="services.html" data-i18n="services">Services</a></li>
-      <li><a href="activities.html" data-i18n="activities">Activities</a></li>
-      <li><a href="partners.html" data-i18n="partners">Partners</a></li>
-      <li><a href="blog.html" data-i18n="blog">Blog</a></li>
-      <li><a href="contact.html" data-i18n="contact">Contact</a></li>
-    </ul>
-    <!-- دکمه‌ها و زبان‌ها -->
-    <div class="nav-actions">
-      <button class="lang-btn active" id="enBtn">EN</button>
-      <button class="lang-btn" id="faBtn">دری</button>
-      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
-      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
-    </div>
-    <!-- همبرگر منو موبایل -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <!-- منوی موبایل -->
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-lang-switch">
-      <button class="lang-btn active" id="enBtnMob">EN</button>
-      <button class="lang-btn" id="faBtnMob">دری</button>
-    </div>
-    <a href="index.html" data-i18n="home">Home</a>
-    <a href="about.html" data-i18n="about">About</a>
-    <a href="services.html" data-i18n="services">Services</a>
-    <a href="activities.html" data-i18n="activities">Activities</a>
-    <a href="partners.html" data-i18n="partners">Partners</a>
-    <a href="blog.html" data-i18n="blog">Blog</a>
-    <a href="contact.html" data-i18n="contact">Contact</a>
-    <div class="mobile-actions">
-      <a href="join.html" class="btn-join" data-i18n="join_us">Join Us</a>
-      <a href="donate.html" class="btn-donate" data-i18n="donate">Donate ♡</a>
-    </div>
-  </div>
-</nav>
+     <a href="index.html" class="logo"> 
+      <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" /> </a> 
+      
+<!-- منوی دسکتاپ --> 
+<ul class="menu">
+<li><a href="index.html" class="nav-link" data-i18n="home">Home</a></li> 
+<li><a href="about.html" class="nav-link" data-i18n="about">About</a></li>
+<li><a href="services.html" class="nav-link" data-i18n="services">Services</a></li> 
+<li><a href="activities.html" class="nav-link" data-i18n="activities">Activities</a></li> 
+<li><a href="partners.html" class="nav-link" data-i18n="partners">Partners</a></li>
+<li><a href="blog.html" class="nav-link" data-i18n="blog">Blog</a></li>
+<li><a href="contact.html" class="nav-link" data-i18n="contact">Contact</a></li> 
+</ul> 
+      
+      <!-- دکمه‌ها و زبان -->
+  <div class="actions"> 
+    <div class="lang-switch"> 
+      <a href="?lang=en" class="active" data-i18n="lang_en">EN</a> 
+      <a href="?lang=da" data-i18n="lang_da">دری</a> </div> 
+      <a href="membership.html" class="btn join" data-i18n="join_us">Join Us</a> 
+      <a href="donate.html" class="btn donate" data-i18n="donate">Donate ♡</a> </div> 
+            
+        <!-- دکمه منوی موبایل --> 
+  <button class="menu-toggle" onclick="toggleMobileMenu()"> 
+      <span class="bar"></span> 
+      <span class="bar"></span> 
+      <span class="bar"></span> </button> </div> 
+              
+        <!-- منوی موبایل --> 
+    <div id="mobile-menu" class="mobile-menu"> 
+    <div class="lang-switch"> <a href="?lang=en" class="active" data-i18n="lang_en">EN</a> 
+    <a href="?lang=da" data-i18n="lang_da">دری</a> </div> 
+     <a href="index.html" class="nav-link" data-i18n="home">Home</a>
+     <a href="about.html" class="nav-link" data-i18n="about">About</a> 
+     <a href="services.html" class="nav-link" data-i18n="services">Services</a> 
+     <a href="activities.html" class="nav-link" data-i18n="activities">Activities</a> 
+     <a href="partners.html" class="nav-link" data-i18n="partners">Partners</a> 
+     <a href="blog.html" class="nav-link" data-i18n="blog">Blog</a> 
+     <a href="contact.html" class="nav-link" data-i18n="contact">Contact</a> 
+
+     <div class="mobile-actions"> 
+     <a href="membership.html" class="btn join" data-i18n="join_us">Join Us</a>
+     <a href="donate.html" class="btn donate" data-i18n="donate">Donate ♡</a> </div> </div> 
+     
+     <!-- کرسر سفارشی -->
+       <div id="cursor-outline"></div>
+        <div id="cursor-dot"></div> 
+      </nav>
+    
+    <!-- ===== پایان هدر ===== -->
 
 
 
-  <!------------HERO----------------->
-  <section class="hero">
-    <div class="hero-content">
-      <h1
-      id="title"
-      data-en="About Education, Cultural and Art Organization (ECAO)"
-      data-dr="درباره سازمان آموزشی، فرهنگی و هنری">
-      About Education, Cultural and Art Organization (ECAO)
-      </h1>
-      <div class="line"></div>
-      <p
-      id="desc"
-      data-en="Learn about our mission, vision, and values, driving intellectual, cultural, and social reconstruction in Afghanistan since 2014."
-      data-dr="درباره مأموریت، دیدگاه و ارزش های ما بیشتر بدانید که از سال ۲۰۱۴ برای بازسازی فرهنگی، اجتماعی و آموزشی افغانستان فعالیت میکند.">
-      Learn about our mission, vision, and values, driving intellectual, cultural, and social reconstruction in Afghanistan since 2014.
-      </p>
-    </div>
-</section>
 
-<!-------------WHO WE ARE SECTION------------->
-<section class="who-we-are">
-    <div class="who-text scroll-left">
-        <span class="small-title"
-        data-en="WHO WE ARE"
-        data-dr="ما که هستیم">
-        WHO WE ARE
-        </span>
-        <h1
-        data-en="Who We Are"
-        data-dr="ما که هستیم">
-        Who We Are
-        </h1>
-        <p class="first-p"
-        data-en="ECAO (Education, Cultural and Art Organization) is a non-governmental academic and cultural entity established with the goal of enhancing awareness, knowledge, technical, and artistic skills among the young generation."
-        data-dr="سازمان آموزشی، فرهنگی و هنری یک نهاد فرهنگی و علمی غیر دولتی است که با هدف افزایش آگاهی، دانش و مهارت های فنی و هنری در میان نسل جوان ایجاد شده است.">
-        ECAO (Education, Cultural and Art Organization) is a non-governmental academic and cultural entity established with the goal of enhancing awareness, knowledge, technical, and artistic skills among the young generation.
-        </p>
-        <p class="second-p"
-        data-en="The organization is dedicated to creating a dynamic and inspiring learning environment that fosters intellectual, moral, scientific, and cultural growth among students and learners."
-        data-dr="این سازمان برای ایجاد یک محیط آموزشی پویا و الهام بخش فعالیت میکند تا رشد علمی، فرهنگی و اخلاقی شاگردان و دانشجویان را تقویت کند.">
-        The organization is dedicated to creating a dynamic and inspiring learning environment that fosters intellectual, moral, scientific, and cultural growth among students and learners.
-        </p>
-        <div class="who-buttons">
-            <button class="touch-btn"
-            data-en="Get in Touch"
-            data-dr="تماس با ما">
-                <span>Get in Touch</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-            <button class="mission-btn"
-            data-en="Support Our Mission"
-            data-dr="حمایت از هدف ما">
-                <span>Support Our Mission</span>
-                <i class="fa-regular fa-heart"></i>
-            </button>
-        </div>
-    </div>
-    <div class="who-image scroll-right">
-        <div class="image-box">
-            <img src="./src/assets/images/1776498176771-428887401.webp" alt="">
-            <div class="small-box">
-                <h2>10+</h2>
-                <p
-                data-en="Years"
-                data-dr="سال">
-                Years
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!------------CORE PURPOSE SECTION-------------->
 
-<section class="purpose-section">
-    <div class="purpose-title scroll-top">
-        <h1
-        data-en="Our Core Purpose"
-        data-dr="هدف اساسی ما">
-        Our Core Purpose
-        </h1>
-        <div class="title-line"></div>
-    </div>
-    <div class="purpose-container">
-        <div class="purpose-card scroll-bottom">
-            <div class="icon-box blue-icon">
-                <i class="fa-regular fa-eye"></i>
-            </div>
-            <h2
-            data-en="Our Vision"
-            data-dr="دیدگاه ما">
-            Our Vision
-            </h2>
-            <p
-            data-en="To become one of the most reputable educational and cultural organizations in Afghanistan, recognized for the promotion of knowledge, ethics, and art."
-            data-dr="تبدیل شدن به یکی از معتبر ترین نهاد های آموزشی و فرهنگی افغانستان که برای رشد دانش، اخلاق و هنر شناخته شود.">
-            To become one of the most reputable educational and cultural organizations in Afghanistan, recognized for the promotion of knowledge, ethics, and art.
-            </p>
-        </div>
-    <div class="purpose-card mission-card scroll-bottom">
-            <div class="icon-box brown-icon">
-                <i class="fa-solid fa-bolt"></i>
-            </div>
-            <h2
-            data-en="Our Mission"
-            data-dr="ماموریت ما">
-            Our Mission
-            </h2>
-            <p
-            data-en="To educate and nurture an aware, creative, and responsible generation capable of playing an active role in the reconstruction of the country."
-            data-dr="آموزش و پرورش نسلی آگاه، خلاق و مسئول که بتواند در بازسازی کشور نقش فعال داشته باشد.">
-            To educate and nurture an aware, creative, and responsible generation capable of playing an active role in the reconstruction of the country.
-            </p>
-        </div>
-        <div class="purpose-card scroll-bottom">
-            <div class="icon-box blue-icon">
-                <i class="fa-regular fa-shield-heart"></i>
-            </div>
-            <h2
-            data-en="Our Values"
-            data-dr="ارزش های ما">
-            Our Values
-            </h2>
-            <p
-            data-en="Honesty, transparency, respect for cultural diversity, and commitment to quality in education and services guide everything we do."
-            data-dr="صداقت، شفافیت، احترام به تنوع فرهنگی و تعهد به کیفیت در آموزش و خدمات، راهنمای تمام فعالیت های ما است.">
-            Honesty, transparency, respect for cultural diversity, and commitment to quality in education and services guide everything we do.
-            </p>
-        </div>
-    </div>
-</section>
 
-<!------------CORE PURPOSE SECTION-------------->
-<section class="activities-section">
-    <div class="activities-container">
-        <div class="activity-card scroll-up">
-            <div class="card-image">
-                <img src="./src/assets/images/students.webp" alt="">
-                <div class="date-box">
-                    <span>April 18, 2026</span>
-                </div>
-        </div>
 
-            <div class="card-content">
-                <h2
-                data-en="Social Activities"
-                data-dr="فعالیت های اجتماعی">
-                Social Activities
-                </h2>
-                <p
-                data-en="ECAO focuses on strengthening social cohesion and promoting a culture of cooperation within communities and among young people."
-                data-dr="سازمان ایکاو برای تقویت همبستگی اجتماعی و ترویج فرهنگ همکاری در میان جامعه و جوانان فعالیت میکند.">
-                ECAO focuses on strengthening social cohesion and promoting a culture of cooperation within communities and among young people.
-                </p>
-                <div class="bottom-line"></div>
-                <button class="see-more">
-                    <span
-                    data-en="See More"
-                    data-dr="بیشتر">
-                    See More
-                    </span>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-            </div>
-        </div>
 
-        <div class="activity-card scroll-up delay">
-        <div class="card-image">
-                <img src="./src/assets/images/membership-hero.webp" alt="">
-                <div class="date-box">
-                    <span>April 18, 2026</span>
-                </div>
-        </div>
 
-        <div class="card-content">
-                <h2
-                data-en="Health"
-                data-dr="صحت">
-                Health
-                </h2>
 
-                <p
-                data-en="ECAO is also active in the field of health and public awareness, working to increase community wellbeing and access to care."
-                data-dr="سازمان ایکاو در بخش صحت و آگاهی عامه نیز فعالیت میکند تا سلامت جامعه و دسترسی بهتر به خدمات تقویت شود.">
-                ECAO is also active in the field of health and public awareness, working to increase community wellbeing and access to care.
-                </p>
 
-                <div class="bottom-line"></div>
-                <button class="see-more">
-                    <span
-                    data-en="See More"
-                    data-dr="بیشتر">
-                    See More
-                    </span>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-            </div>
-        </div>
 
-        <div class="activity-card scroll-up delay2">
-            <div class="card-image">
-                <img src="./src/assets/images/1776498176771-428887401.webp" alt="">
-                <div class="date-box">
-                    <span>April 18, 2026</span>
-                </div>
-            </div>
-            <div class="card-content">
-                <h2
-                data-en="Education"
-                data-dr="آموزش">
-                Education
-                </h2>
-                <p
-                data-en="ECAO works to improve the knowledge and skills of youth and students through educational and training programs."
-                data-dr="سازمان ایکاو برای بهبود دانش و مهارت های جوانان و دانش آموزان از طریق برنامه های آموزشی فعالیت میکند.">
-                ECAO works to improve the knowledge and skills of youth and students through educational and training programs.
-                </p>
-                <div class="bottom-line"></div>
-                <button class="see-more">
-                    <span
-                    data-en="See More"
-                    data-dr="بیشتر">
-                    See More
-                    </span>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
 
-    <!-- فوتر -->
-<footer class="footer-section">
-  <div class="footer-container">
-    <!-- سمت چپ: Support Us و توضیحات -->
-    <div class="footer-brand fade-in-up stagger-1">
-      <div class="footer-logo">
-        <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="footer-logo-img">
+
+
+
+
+    <footer class="footer"> 
+<div class="footer-container"> 
+  
+  <!-- برند --> 
+  <div class="footer-brand"> 
+  <a href="index.html" class="logo-link"> 
+  <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" class="logo" /> </a> 
+  <p class="brand-text" data-i18n="footer_description"> ECAO is dedicated to creating positive change through community empowerment and sustainable development. </p> 
+ 
+ 
+ <div class="social-icons">
+  <a href="https://www.facebook.com/profile.php?id=61578778565147" target="_blank" rel="noopener noreferrer" class="facebook"> 
+  <span class="material-icons">facebook</span> </a> 
+  <a href="donate.html" class="heart"> 
+  <span class="material-icons">favorite</span> </a> </div> </div> 
+  
+  <!-- لینک‌های سریع --> 
+  <div class="footer-nav"> 
+  <h3 data-i18n="quick_links">Quick Links</h3> 
+  <ul> 
+    <li><a href="index.html" data-i18n="home">Home</a></li> 
+    <li><a href="about.html" data-i18n="about">About</a></li>
+    <li><a href="services.html" data-i18n="services">Services</a></li> 
+    <li><a href="activities.html" data-i18n="activities">Activities</a></li> 
+    <li><a href="partners.html" data-i18n="partners">Partners</a></li> 
+  </ul>
+ </div> 
+ 
+ <!-- تماس --> 
+  <div class="footer-contact"> 
+    <h3 data-i18n="contact">Contact</h3> 
+    
+    <ul> 
+      <li><a href="https://www.google.com/maps/search/?api=1&query=Kabul,+Afghanistan" target="_blank" rel="noopener noreferrer" data-i18n="location">Kabul, Afghanistan</a></li> 
+      <li><a href="tel:+93764348000" data-i18n="phone">+93 764 348 000</a></li> 
+      <li><a href="mailto:info@ecao.ngo" data-i18n="email">info@ecao.ngo</a></li> </ul> </div> 
+      
+      <!-- حمایت از ما --> 
+       <div class="footer-cta"> 
+        <h3 data-i18n="support_us">Support Us</h3> 
+        <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p> 
+        <a href="donate.html" class="donate-btn" data-i18n="donate_now">Donate Now</a> </div> </div> 
+        <div class="footer-bottom"> <p class="developer" data-i18n="developer">Design and Developed by Taqi Raya(BTB)</p> 
+        <p class="copyright" data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p> </div> </footer> 
         
-      </div>
-      <p data-i18n="footer_description">ECAO is dedicated to creating positive change through community empowerment and sustainable development.</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Donate">♡</a>
-      </div>
-    </div>
-    <!-- سمت راست: لینک‌ها و تماس -->
-    <div class="footer-nav fade-in-up stagger-2">
-      <h3 data-i18n="quick_links">Quick Links</h3>
-      <ul>
-        <li><a href="index.html" data-i18n="home">Home</a></li>
-        <li><a href="about.html" data-i18n="about">About</a></li>
-        <li><a href="services.html" data-i18n="services">Services</a></li>
-        <li><a href="activities.html" data-i18n="activities">Activities</a></li>
-        <li><a href="partners.html" data-i18n="partners">Partners</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact fade-in-up stagger-3">
-      <h3 data-i18n="contact">Contact</h3>
-      <ul>
-        <li><a href="contact.html" data-i18n="location">Kabul, Afghanistan</a></li>
-        <li><a href="tel:+93764348000">+93 764 348 000</a></li>
-        <li><a href="mailto:info@ecao.ngo">info@ecao.ngo</a></li>
-      </ul>
-    </div>
-    <!-- حمایت -->
-    <div class="footer-cta fade-in-up stagger-4">
-      <h3 data-i18n="support_us">Support Us</h3>
-      <p data-i18n="support_description">Your contribution can change lives for thousands of Afghans in need.</p>
-      <a href="donate.html" class="footer-donate-btn" data-i18n="donate_now">Donate Now ♡</a>
-    </div>
-  </div>
-  <!-- پایین فوتر -->
-  <div class="footer-bottom">
-    <p data-i18n="developer">Design and Developed by Taqi Raya (BTB)</p>
-    <p data-i18n="copyright">© 2014 - 2026 ECAO. All rights reserved.</p>
-  </div>
-</footer>
+        <!-- دکمه برگشت به بالا --> 
+         <button id="backToTopBtn" class="back-to-top" data-i18n="back_top">↑</button> 
+         <!-- ===== پایان فوتر ===== -->
 
-<!-- دکمه بازگشت به بالا -->
-<button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
 
     <!-- end code -->
     <script src="./src/js/main.js" defer></script>
