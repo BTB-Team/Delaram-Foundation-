@@ -42,17 +42,18 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
-  margin: 0;
   border-radius: 10px;
   animation: slideDown 1s ease forwards;
+  
 }
 
 .hero-line2 {
   width: 100px;
   height: 8px;
-  background: #bf6901; /* خط خاکستری */
+  background-color: palevioletred;
   margin: 1rem auto;
   border-radius: 30px;
+ 
 }
 
 .hero-text {
@@ -60,11 +61,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
   color: #fff;
+  margin-bottom: 5%;
 }
-
-
-
-
 .hero-gradient {
   position: absolute;
   inset: 0;
@@ -82,8 +80,6 @@ body {
   text-align: center;
   color: #0a0101;
 }
-
-
 .card-section {
     margin-top: 10%;
 }
@@ -109,7 +105,6 @@ body {
   font-size: x-large;
  
 }
-
 .hero-title2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -118,7 +113,7 @@ body {
   border-radius: 10px;
   animation: slideDown 1s ease forwards;
   text-align: center;
-  
+
 }
 .hero-text2 {
   font-size: 1.2rem;
@@ -138,10 +133,6 @@ body {
     opacity: 1;
   }
 }
-
-
-
-
 .cta-section h2 {
   font-size: 2.2rem;
   font-weight: bold;
@@ -163,8 +154,6 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-
 .btn {
   background: #ffffff; /* طلایی */
   color: #0a2540;
@@ -182,10 +171,6 @@ font-weight: bold;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-
-
-
-
 .cta-section {
   background: linear-gradient(
     to bottom right,
@@ -202,144 +187,195 @@ font-weight: bold;
   overflow: hidden;
 }
 
-
-
-.partner-card{
-    max-width: 320px;
-    margin-inline: auto;
-    padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    background: var(--surface-primary);
-    border: 1px solid var(--border-light);
-    text-align: center;
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-    margin-top: 50px;
+/* ===== مشترک برای index و partner ===== */
+.home-partners-grid,
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px auto 0;
+  padding: 0 40px;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
-.partner-card:hover{
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-300);
+/* ===== کارت مشترک ===== */
+.partner-card {
+  width: 100%;
+  margin: 0;
+  padding: 24px 18px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.partner-card__icon{
-    width: 120px;
-    height: 120px;
-    margin-inline: auto;
-    margin-bottom: var(--space-6);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: var(--radius-xl);
-    background: var(--surface-secondary);
-    border: 2px solid var(--primary-100);
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+  border-color: #cfd8e3;
 }
 
-.partner-card__icon img{
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
+/* ===== آیکن ===== */
+.partner-card__icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #f7f9fc;
+  border: 2px solid #e8eef6;
 }
 
-.partner-card__title{
-    font-size: var(--fs-h4);
-    margin-bottom: var(--space-4);
-    color: var(--text-primary);
-    line-height: 1.4;
+.partner-card__icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
-.partner-card__description{
-    font-size: var(--fs-body);
-    color: var(--text-secondary);
-    line-height: var(--lh-body-en);
-    margin-bottom: var(--space-6);
+/* ===== عنوان ===== */
+.partner-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1f2a44;
+  line-height: 1.4;
 }
 
-.partner-card__status{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 36px;
-    padding-inline: var(--space-4);
-
-    border-radius: var(--radius-full);
-
-    background: var(--success-50);
-    color: var(--success-500);
-
-    font-size: var(--fs-small);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* ===== توضیح ===== */
+.partner-card__description {
+  font-size: 0.9rem;
+  color: #5f6b7a;
+  line-height: 1.8;
+  margin-bottom: 14px;
 }
 
-@media (max-width:768px){
+/* ===== وضعیت ===== */
+.partner-card__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eaf8ef;
+  color: #2f8f4e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-  .hero-title{
-    font-size:2.2rem;
+/* ===== ریسپانسیو ===== */
+/* =====  section one ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+
+    .hero-title {
+        font-size: var(--fs-h3);
+        padding-inline: var(--space-4);
+        margin-top: 20%;
+    }
+    .hero-text {
+        font-size: var(--fs-body);
+        padding-inline: var(--space-4);
+    }
+
+    .hero-line2 {
+        width: 60px;
+    }
+}
+/* خیلی کوچک (موبایل‌های ریز) */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 55vh;
+    }
+
+    .hero-title {
+        font-size: var(--fs-h4);
+    }
+
+    .hero-text {
+        font-size: var(--fs-small);
+    }
+}
+/* section two*/
+@media (max-width: 768px) {
+    
+    .hero-title2 {
+        font-size: var(--fs-h3);
+        padding-inline: var(--space-4);
+        margin-top: 20%;
+    }
+
+    .hero-text2 {
+        font-size: var(--fs-body);
+        padding-inline: var(--space-4);
+    }
+
+    .hero-line2 {
+        width: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+  .home-partners-grid,
+  .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 24px;
   }
-
 }
 
-@media (max-width:768px){
-
-  .hero-text{
-    font-size:20px;
+@media (max-width: 768px) {
+  .home-partners-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
   }
-
 }
+/* section three */
+/* موبایل */
+@media (max-width: 768px) {
+    .cta-section {
+        padding-block: var(--space-12);
+        padding-inline: var(--space-4);
+        border-radius: var(--radius-lg);
+        margin-bottom: 10%;
+    }
 
-@media (max-width:768px){
+    .cta-section h2 {
+        font-size: var(--fs-h4);
+    }
 
-  .hero-title2{
-    font-size:1.80rem;
-  }
+    .cta-section p {
+        font-size: var(--fs-small);
+        margin-bottom: var(--space-6);
+    }
 
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .cta-buttons .btn {
+        width: 100%;    
+    }
 }
+/* خیلی کوچک */
+@media (max-width: 480px) {
+    .cta-section h2 {
+        font-size: var(--fs-h5);
+    }
 
-@media (max-width:768px){
-
-  .hero-text2{
-    font-size:15px;
-  }
-
+    .cta-section p {
+        font-size: 0.85rem;
+    }
 }
-@media (max-width:768px){
-
-  .farsi{
-     padding: 5px 15px;
-     font-size: large;
-  }
-
-}
-
-@media (max-width:768px){
-
-  .English{
-     padding: 5px 15px;
-          font-size: large;
-
-  }
-
-}
-
-@media (max-width:768px){
-
-  .cta-section h2{
-    font-size:1.80rem;
-  }
-
-}
-@media (max-width:768px){
-  .cta-section p{
-    font-size:15px;
-  }
-
-}
-
-
