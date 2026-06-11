@@ -1,71 +1,70 @@
-
 // ===== داده‌های بلاگ =====
 const ARTICLES = [
   {
-    id:'1',
-    emoji:'🏔️',
-    tag_en:'Travel',
-    tag_fa:'سفر',
-    title_en:'Exploring Band-e-Amir',
-    title_fa:'کشف بند امیر',
-    desc_en:'Discover the beauty of Band-e-Amir national park.',
-    desc_fa:'زیبایی پارک ملی بند امیر را کشف کنید.',
-    date:'2025-01-15'
+    id: '1',
+    emoji: '🏔️',
+    tag_en: 'Travel',
+    tag_fa: 'سفر',
+    title_en: 'Exploring Band-e-Amir',
+    title_fa: 'کشف بند امیر',
+    desc_en: 'Discover the beauty of Band-e-Amir national park.',
+    desc_fa: 'زیبایی پارک ملی بند امیر را کشف کنید.',
+    date: '2025-01-15'
   },
   {
-    id:'2',
-    emoji:'🍲',
-    tag_en:'Food',
-    tag_fa:'غذا',
-    title_en:'The secret Behind perfect Afghan Mantu',
-    title_fa:'راز پشت مانتو کامل افغان',
-    desc_en:'Learn the traditional recipe and techniques passed down through generations.',
-    desc_fa:'طرز العمل و تخنیک های سنتی که از نسل ها به نسل ها انتقال یافته را بیاموزید.',
-    date:'2025-01-15'
+    id: '2',
+    emoji: '🍲',
+    tag_en: 'Food',
+    tag_fa: 'غذا',
+    title_en: 'The secret Behind perfect Afghan Mantu',
+    title_fa: 'راز پشت مانتو کامل افغان',
+    desc_en: 'Learn the traditional recipe and techniques passed down through generations.',
+    desc_fa: 'طرز العمل و تخنیک های سنتی که از نسل ها به نسل ها انتقال یافته را بیاموزید.',
+    date: '2025-01-15'
   },
   {
-    id:'3',
-    emoji:'💻',
-    tag_en:'Technology',
-    tag_fa:'تکنالوژی',
-    title_en:'Tech Startups in Kabul',
-    title_fa:'استارتاپ‌های کابل',
-    desc_en:'Young Afghan entrepreneurs are building startups.',
-    desc_fa:'کارآفرینان جوان افغان استارتاپ می‌سازند.',
-    date:'2025-02-08'
+    id: '3',
+    emoji: '💻',
+    tag_en: 'Technology',
+    tag_fa: 'تکنالوژی',
+    title_en: 'Tech Startups in Kabul',
+    title_fa: 'استارتاپ‌های کابل',
+    desc_en: 'Young Afghan entrepreneurs are building startups.',
+    desc_fa: 'کارآفرینان جوان افغان استارتاپ می‌سازند.',
+    date: '2025-02-08'
   },
   {
-    id:'4',
-    emoji:'🏔️',
-    tag_en:'Travel',
-    tag_fa:'سفر',
-    title_en:'Band-e-Amir National Park',
-    title_fa:'پارک ملی بند امیر',
-    desc_en:'Discover the stunning beauty of Afghanistan first national park.',
-    desc_fa:'زیبایی خیره‌کننده اولین پارک ملی افغانستان را کشف کنید.',
-    date:'2025-01-20'
+    id: '4',
+    emoji: '🏔️',
+    tag_en: 'Travel',
+    tag_fa: 'سفر',
+    title_en: 'Band-e-Amir National Park',
+    title_fa: 'پارک ملی بند امیر',
+    desc_en: 'Discover the stunning beauty of Afghanistan first national park.',
+    desc_fa: 'زیبایی خیره‌کننده اولین پارک ملی افغانستان را کشف کنید.',
+    date: '2025-01-20'
   },
   {
-    id:'5',
-    emoji:'🍲',
-    tag_en:'Food',
-    tag_fa:'غذا',
-    title_en:'Afghan Mantu Recipe',
-    title_fa:'دستور پخت منتوی افغانی',
-    desc_en:'Learn the traditional recipe and cooking techniques.',
-    desc_fa:'دستور پخت سنتی و تکنیک‌های آشپزی را بیاموزید.',
-    date:'2025-02-01'
+    id: '5',
+    emoji: '🍲',
+    tag_en: 'Food',
+    tag_fa: 'غذا',
+    title_en: 'Afghan Mantu Recipe',
+    title_fa: 'دستور پخت منتوی افغانی',
+    desc_en: 'Learn the traditional recipe and cooking techniques.',
+    desc_fa: 'دستور پخت سنتی و تکنیک‌های آشپزی را بیاموزید.',
+    date: '2025-02-01'
   },
   {
-    id:'6',
-    emoji:'💻',
-    tag_en:'Technology',
-    tag_fa:'تکنالوژی',
-    title_en:'Kabul Tech Startups',
-    title_fa:'استارتاپ‌های تکنولوژی کابل',
-    desc_en:'Young Afghan entrepreneurs are building innovative startups.',
-    desc_fa:'کارآفرینان جوان افغان استارتاپ‌های نوآورانه می‌سازند.',
-    date:'2025-02-10'
+    id: '6',
+    emoji: '💻',
+    tag_en: 'Technology',
+    tag_fa: 'تکنالوژی',
+    title_en: 'Kabul Tech Startups',
+    title_fa: 'استارتاپ‌های تکنولوژی کابل',
+    desc_en: 'Young Afghan entrepreneurs are building innovative startups.',
+    desc_fa: 'کارآفرینان جوان افغان استارتاپ‌های نوآورانه می‌سازند.',
+    date: '2025-02-10'
   }
 ];
 
@@ -74,7 +73,7 @@ console.log("📦 ARTICLES:", ARTICLES.length, "پست");
 // ===== تابع باز کردن Pop-up =====
 function openPostPopup(postId) {
   console.log("🔵 باز کردن popup برای پست:", postId);
-  
+
   const overlay = document.createElement('div');
   overlay.style.cssText = `
     position: fixed;
@@ -88,7 +87,6 @@ function openPostPopup(postId) {
     justify-content: center;
     align-items: center;
   `;
-  
   const popup = document.createElement('div');
   popup.style.cssText = `
     position: relative;
@@ -100,7 +98,6 @@ function openPostPopup(postId) {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     overflow: hidden;
   `;
-  
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '✕';
   closeBtn.style.cssText = `
@@ -118,11 +115,10 @@ function openPostPopup(postId) {
     z-index: 10000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   `;
-  closeBtn.onclick = function() {
+  closeBtn.onclick = function () {
     document.body.removeChild(overlay);
     document.body.style.overflow = 'auto';
   };
-  
   const iframe = document.createElement('iframe');
   iframe.src = `./single page.html?id=${postId}`;
   iframe.style.cssText = `
@@ -130,21 +126,19 @@ function openPostPopup(postId) {
     height: 100%;
     border: none;
   `;
-  
   popup.appendChild(closeBtn);
   popup.appendChild(iframe);
   overlay.appendChild(popup);
   document.body.appendChild(overlay);
   document.body.style.overflow = 'hidden';
-  
-  overlay.addEventListener('click', function(e) {
+
+  overlay.addEventListener('click', function (e) {
     if (e.target === overlay) {
       document.body.removeChild(overlay);
       document.body.style.overflow = 'auto';
     }
   });
 }
-
 // ===== ساخت کارت با سایزهای ثابت =====
 function createBlogCard(post, lang, showComments) {
   const card = document.createElement('div');
@@ -163,7 +157,6 @@ function createBlogCard(post, lang, showComments) {
     flex-direction: column;
     position: relative;
   `;
-  
   // ⭐ تصویر - سایز ثابت
   const imageWrapper = document.createElement('div');
   imageWrapper.style.cssText = `
@@ -173,7 +166,6 @@ function createBlogCard(post, lang, showComments) {
     height: 220px;
     flex-shrink: 0;
   `;
-  
   const img = document.createElement('img');
   img.src = `https://picsum.photos/400/300?random=${post.id}`;
   img.alt = lang === 'fa' ? post.title_fa : post.title_en;
@@ -183,7 +175,6 @@ function createBlogCard(post, lang, showComments) {
     object-fit: cover;
     transition: transform 0.6s ease;
   `;
-  
   // ⭐ تگ - سایز ثابت
   const tagLabel = document.createElement('span');
   tagLabel.textContent = `${post.emoji} ${lang === 'fa' ? post.tag_fa : post.tag_en}`;
@@ -202,10 +193,9 @@ function createBlogCard(post, lang, showComments) {
     display: flex;
     align-items: center;
   `;
-  
   imageWrapper.appendChild(img);
   imageWrapper.appendChild(tagLabel);
-  
+
   // ⭐ محتوا - فاصله‌های کم
   const contentWrapper = document.createElement('div');
   contentWrapper.style.cssText = `
@@ -214,7 +204,6 @@ function createBlogCard(post, lang, showComments) {
     display: flex;
     flex-direction: column;
   `;
-  
   // ⭐ عنوان - سایز ثابت
   const title = document.createElement('h3');
   title.textContent = lang === 'fa' ? post.title_fa : post.title_en;
@@ -233,7 +222,6 @@ function createBlogCard(post, lang, showComments) {
     line-height: 1.4;
     flex-shrink: 0;
   `;
-  
   // ⭐ توضیحات - سایز ثابت
   const desc = document.createElement('p');
   desc.textContent = lang === 'fa' ? post.desc_fa : post.desc_en;
@@ -250,10 +238,9 @@ function createBlogCard(post, lang, showComments) {
     -webkit-box-orient: vertical;
     flex-shrink: 0;
   `;
-  
   contentWrapper.appendChild(title);
   contentWrapper.appendChild(desc);
-  
+
   if (showComments) {
     // ⭐ دکمه‌های لایک و کامنت - سایز ثابت
     const metaWrapper = document.createElement('div');
@@ -267,7 +254,6 @@ function createBlogCard(post, lang, showComments) {
       align-items: center;
       flex-shrink: 0;
     `;
-    
     const likeBtn = document.createElement('button');
     likeBtn.innerHTML = `❤️ <span>0</span>`;
     likeBtn.style.cssText = `
@@ -283,7 +269,7 @@ function createBlogCard(post, lang, showComments) {
       padding: 0;
       height: 28px;
     `;
-    likeBtn.onclick = function(e) {
+    likeBtn.onclick = function (e) {
       e.stopPropagation();
       this.classList.toggle('liked');
       const count = this.querySelector('span');
@@ -297,7 +283,6 @@ function createBlogCard(post, lang, showComments) {
       }
       count.textContent = num;
     };
-    
     const commentBtn = document.createElement('button');
     commentBtn.textContent = `💬 ${lang === 'fa' ? 'نظرها' : 'Comments'}`;
     commentBtn.style.cssText = `
@@ -310,10 +295,9 @@ function createBlogCard(post, lang, showComments) {
       padding: 0;
       height: 28px;
     `;
-    
     metaWrapper.appendChild(likeBtn);
     metaWrapper.appendChild(commentBtn);
-    
+
     // ⭐ بخش کامنت‌ها - با ارتفاع دینامیک
     const commentsSection = document.createElement('div');
     commentsSection.className = 'comments-section';
@@ -327,7 +311,6 @@ function createBlogCard(post, lang, showComments) {
       border-radius: 8px;
       border: 1px solid #e2e8f0;
     `;
-    
     const commentsList = document.createElement('div');
     commentsList.className = 'comments-list';
     commentsList.style.cssText = `
@@ -335,15 +318,14 @@ function createBlogCard(post, lang, showComments) {
       max-height: 150px;
       overflow-y: auto;
     `;
-    
     const commentForm = document.createElement('form');
     commentForm.style.cssText = 'display: flex; gap: 0.5rem;';
-    commentForm.onsubmit = function(e) {
+    commentForm.onsubmit = function (e) {
       e.preventDefault();
       const input = this.querySelector('input');
       const text = input.value.trim();
       if (!text) return;
-      
+
       const item = document.createElement('div');
       item.style.cssText = `
         background: white;
@@ -357,7 +339,6 @@ function createBlogCard(post, lang, showComments) {
       commentsList.prepend(item);
       input.value = '';
     };
-    
     const commentInput = document.createElement('input');
     commentInput.type = 'text';
     commentInput.placeholder = lang === 'fa' ? 'نظر خود را بنویسید' : 'Write your comment';
@@ -370,7 +351,6 @@ function createBlogCard(post, lang, showComments) {
       font-size: 0.85rem;
       height: 36px;
     `;
-    
     const commentSubmit = document.createElement('button');
     commentSubmit.type = 'submit';
     commentSubmit.textContent = lang === 'fa' ? 'ارسال' : 'Send';
@@ -386,23 +366,22 @@ function createBlogCard(post, lang, showComments) {
       height: 36px;
       white-space: nowrap;
     `;
-    commentSubmit.onmouseenter = function() {
+    commentSubmit.onmouseenter = function () {
       this.style.background = '#1e6a9e';
     };
-    commentSubmit.onmouseleave = function() {
+    commentSubmit.onmouseleave = function () {
       this.style.background = '#2b8bc7';
     };
-    
     commentForm.appendChild(commentInput);
     commentForm.appendChild(commentSubmit);
     commentsSection.appendChild(commentsList);
     commentsSection.appendChild(commentForm);
-    
+
     // ⭐ Event listener برای دکمه کامنت - اصلاح شده
-    commentBtn.onclick = function(e) {
+    commentBtn.onclick = function (e) {
       e.stopPropagation();
       console.log("💬 کلیک روی دکمه کامنت");
-      
+
       if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
         // باز کردن
         commentsSection.style.display = 'block';
@@ -421,11 +400,9 @@ function createBlogCard(post, lang, showComments) {
         console.log("✅ کامنت‌ها بسته شد");
       }
     };
-    
     contentWrapper.appendChild(metaWrapper);
     contentWrapper.appendChild(commentsSection);
   }
-  
   // ⭐ خط جداکننده - فاصله کم
   const hr = document.createElement('hr');
   hr.style.cssText = `
@@ -434,7 +411,6 @@ function createBlogCard(post, lang, showComments) {
     margin: auto 0 0.75rem 0;
     flex-shrink: 0;
   `;
-  
   // ⭐ دکمه Read More - سایز ثابت
   const readMoreBtn = document.createElement('button');
   readMoreBtn.textContent = lang === 'fa' ? 'بیشتر بخوانید' : 'Read More';
@@ -454,25 +430,25 @@ function createBlogCard(post, lang, showComments) {
     white-space: nowrap;
     flex-shrink: 0;
   `;
-  readMoreBtn.onmouseenter = function() {
+  readMoreBtn.onmouseenter = function () {
     this.style.background = '#2b8bc7';
     this.style.color = 'white';
   };
-  readMoreBtn.onmouseleave = function() {
+  readMoreBtn.onmouseleave = function () {
     this.style.background = 'transparent';
     this.style.color = '#2b8bc7';
   };
-  readMoreBtn.onclick = function(e) {
+  readMoreBtn.onclick = function (e) {
     e.stopPropagation();
     openPostPopup(post.id);
   };
-  
+
   contentWrapper.appendChild(hr);
   contentWrapper.appendChild(readMoreBtn);
-  
+
   card.appendChild(imageWrapper);
   card.appendChild(contentWrapper);
-  
+
   // Hover effects
   card.addEventListener('mouseenter', () => {
     card.style.transform = 'translateY(-8px)';
@@ -480,57 +456,73 @@ function createBlogCard(post, lang, showComments) {
     title.style.color = '#2b8bc7';
     img.style.transform = 'scale(1.1)';
   });
-  
+
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'translateY(0)';
     card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
     title.style.color = '#0f172a';
     img.style.transform = 'scale(1)';
   });
-  
+
   return card;
 }
 
 // ===== رندر برای Home =====
-window.renderHomePostCards = function() {
+window.renderHomePostCards = function () {
   console.log("🔵 renderHomePostCards شروع");
-  
+
   const container = document.getElementById('home-posts-container');
   if (!container) {
     console.error("❌ home-posts-container پیدا نشد!");
     return;
   }
-  
   container.innerHTML = '';
   container.style.cssText = `
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 2rem;
     justify-items: center;
   `;
-  
+  // Responsive styles
+  const styleId = 'home-posts-responsive';
+  if (!document.getElementById(styleId)) {
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.textContent = `
+      @media (max-width: 1024px) {
+        #home-posts-container {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+      @media (max-width: 640px) {
+        #home-posts-container {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
   const lang = localStorage.getItem('lang') || 'en';
   const lastPosts = ARTICLES.slice(-3);
-  
+
   lastPosts.forEach(post => {
     const card = createBlogCard(post, lang, true);
     container.appendChild(card);
   });
-  
+
   console.log("✅ Home: رندر شد");
 };
 
 // ===== رندر برای Blog =====
-window.renderArticles = function() {
+window.renderArticles = function () {
   console.log("🔵 renderArticles شروع");
-  
+
   const grid = document.getElementById('articlesGrid');
   if (!grid) {
     console.log("⚠️ articlesGrid پیدا نشد");
     return;
   }
-  
   grid.innerHTML = '';
   grid.style.cssText = `
     display: grid;
@@ -539,24 +531,23 @@ window.renderArticles = function() {
     margin-top: 2rem;
     justify-items: center;
   `;
-  
   const lang = localStorage.getItem('lang') || 'en';
-  
+
   ARTICLES.forEach(post => {
     const card = createBlogCard(post, lang, true);
     grid.appendChild(card);
   });
-  
+
   console.log("✅ Blog: رندر شد");
 };
 
 // ===== اجرا =====
 window.addEventListener('DOMContentLoaded', () => {
   console.log("🟢 DOM آماده - blog.js");
-  
+
   if (document.getElementById('articlesGrid')) {
     renderArticles();
   }
 });
 
-console.log("✅ blog.js آماده");
+console.log("✅ blog.js آماده")
