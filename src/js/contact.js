@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
   const contactTranslations = {
     en: {
-      contact_title: "Get in Touch",
-      contact_desc: "We would love to hear from you. Contact us for any questions, support, or partnership opportunities.",
+      hero_title: "Get in Touch",
+      hero_desc: "We would love to hear from you. Contact us for any questions, support, or partnership opportunities.",
       address_label: "Address",
       address_value: "Kabul, Afghanistan",
       phone_label: "Phone",
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
       form_submit: "Send Message"
     },
     fa: {
-      contact_title: "با ما در تماس شوید",
-      contact_desc: "ما خوشحال می‌شویم از شما بشنویم. برای سوالات، همکاری یا دریافت معلومات با ما تماس بگیرید.",
+      hero_title: "با ما در تماس شوید",
+      hero_desc: "ما خوشحال می‌شویم از شما بشنویم. برای سوالات، همکاری یا دریافت معلومات با ما تماس بگیرید.",
       address_label: "آدرس",
       address_value: "کابل، افغانستان",
       phone_label: "شماره تماس",
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  window.addEventListener('languageChanged', function(e) {
+  window.addEventListener('languageChanged', function (e) {
     updateContactPage(e.detail.lang);
   });
 
