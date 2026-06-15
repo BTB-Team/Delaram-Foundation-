@@ -1,8 +1,8 @@
 /*============== membership page css styles ==============*/
 
 /* =========================================================
-           DESIGN SYSTEM
-        ========================================================= */
+    DESIGN SYSTEM
+========================================================= */
 
 :root {
 
@@ -149,8 +149,8 @@ html[lang="fa"] h6 {
 }
 
 /* =========================================================
-           RESET
-        ========================================================= */
+    RESET
+========================================================= */
 
 *,
 *::before,
@@ -188,8 +188,8 @@ select {
 }
 
 /* =========================================================
-           UTILITIES
-        ========================================================= */
+    UTILITIES
+========================================================= */
 
 .container {
     width: 100%;
@@ -199,7 +199,7 @@ select {
 }
 
 .membership-form {
-    padding-block: var(--space-20);
+    padding: 0 0 var(--space-20);
 }
 
 .grid {
@@ -212,96 +212,99 @@ select {
 }
 
 /* =========================================================
-           HERO
-        ========================================================= */
+    HERO
+========================================================= */
 
 .hero {
     position: relative;
     min-height: 620px;
-    padding-block: var(--space-20);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    padding-inline: var(--space-6);
+    padding-top: var(--space-20);
+    margin-bottom: var(--space-20);
     background-image:
         linear-gradient(rgba(0, 0, 0, .45),
             rgba(0, 0, 0, .45)),
-        url("../images/membership-hero.webp");
-
+        url("../assets/images/membership-hero.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.hero-content {
+/* CONTENT */
+.hero>* {
     position: relative;
     z-index: 2;
     padding-inline: var(--space-6);
 }
+.hero-content{
+    max-width: 900px;
+    margin-inline:auto;
+}
 
 .hero-title {
-    color: var(--white) !important;
+    color: var(--white);
     font-size: var(--fs-h1);
     line-height: var(--lh-heading);
     margin-bottom: var(--space-4);
 }
 
-.hero-text {
-    color: rgba(255, 255, 255, .92);
-    font-size: clamp(1rem, 2vw, 1.7rem);
+.hero .hero-text {
     max-width: 760px;
-    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    line-height: 1.6;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================================
-           LANGUAGE SWITCH
-        ========================================================= */
+    Membership Hero RESPONSIVE
+========================================================= */
 
-.lang-switch {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-4);
-    margin-top: var(--space-8);
+@media (max-width: 992px) {
+    .hero {
+        min-height: 540px;
+    }
 }
 
-.lang-btn {
-    width: 90px;
-    height: 46px;
-    border-radius: var(--radius-full);
-    border: 1px solid rgba(255, 255, 255, .3);
-    background: rgba(255, 255, 255, .12);
-    color: var(--white);
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    transition: var(--transition-base);
+@media (max-width: 768px) {
+    .hero {
+        min-height: 460px;
+        padding-inline: var(--space-4);
+    }
 }
 
-.lang-btn:hover,
-.lang-btn.active {
-    background: var(--white);
-    color: var(--primary-500);
+@media (max-width: 540px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero .hero-text {
+        max-width: 95%;
+    }
+
+    .hero-content {
+        padding-inline: var(--space-4);
+    }
 }
 
 /* =========================================================
-           FORM CARD
-        ========================================================= */
+    FORM CARD
+========================================================= */
 
 .membership-card {
     max-width: 1100px;
     margin-inline: auto;
-
     background: var(--surface-primary);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-2xl);
-
     padding: var(--space-16);
-
     box-shadow: var(--shadow-lg);
-
-    transition:
-        transform var(--transition-base),
-        box-shadow var(--transition-base);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .membership-card:hover {
@@ -321,8 +324,6 @@ select {
     border-bottom: 1px solid var(--border-light);
 }
 
-
-
 /* =========================================================
    SECTION TITLE
 ========================================================= */
@@ -340,18 +341,14 @@ select {
     width: 38px;
     height: 38px;
     min-width: 38px;
-
     border-radius: .75rem;
     background: var(--primary-50);
     color: var(--primary-500);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-weight: 700;
     font-size: .95rem;
-
     flex-shrink: 0;
 }
 
@@ -382,10 +379,9 @@ html[dir="rtl"] .section-title h2 {
     text-align: right;
 }
 
-
 /* =========================================================
-           FORM
-        ========================================================= */
+   FORM
+========================================================= */
 
 .form-group {
     margin-bottom: var(--space-6);
@@ -399,8 +395,6 @@ html[dir="rtl"] .section-title h2 {
     color: var(--gray-800);
 }
 
-
-
 .input {
     width: 100%;
     min-height: 56px;
@@ -409,10 +403,7 @@ html[dir="rtl"] .section-title h2 {
     border-radius: var(--radius-md);
     background: var(--surface-primary);
     color: var(--text-primary);
-
-    transition:
-        border-color var(--transition-fast),
-        box-shadow var(--transition-fast);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .input:hover {
@@ -426,9 +417,7 @@ html[dir="rtl"] .section-title h2 {
 .input:focus {
     outline: none;
     border-color: var(--primary-500);
-
-    box-shadow:
-        0 0 0 4px rgba(22, 58, 95, .1);
+    box-shadow: 0 0 0 4px rgba(22, 58, 95, .1);
 }
 
 textarea.input {
@@ -437,10 +426,17 @@ textarea.input {
     padding-block: var(--space-4);
 }
 
+html[dir="rtl"] .input {
+    text-align: right;
+}
+
+html[dir="ltr"] .input {
+    text-align: left;
+}
 
 /* =========================================================
-           PRIVACY BOX
-        ========================================================= */
+    PRIVACY BOX
+========================================================= */
 
 .privacy-box {
     display: flex;
@@ -459,7 +455,6 @@ textarea.input {
     height: 42px;
     border-radius: 50%;
     background: var(--white);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -473,8 +468,8 @@ textarea.input {
 }
 
 /* =========================================================
-           ACTIONS
-        ========================================================= */
+    ACTIONS
+========================================================= */
 
 .form-actions {
     display: grid;
@@ -488,23 +483,14 @@ textarea.input {
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
-
     width: auto;
     min-height: 56px;
     height: 58px;
-
     border: none;
     border-radius: var(--radius-md);
-
     cursor: pointer;
-
     font-weight: 600;
-
-    transition:
-        background-color var(--transition-base),
-        color var(--transition-base),
-        transform var(--transition-base),
-        box-shadow var(--transition-base);
+    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .btn:active {
@@ -514,7 +500,6 @@ textarea.input {
 .btn-primary {
     background: var(--primary-500);
     color: var(--text-white);
-
     border-radius: var(--radius-full);
 }
 
@@ -525,17 +510,15 @@ textarea.input {
 
 .btn-secondary {
     background: transparent;
-
     border: 2px solid var(--primary-500);
-
     border-radius: var(--radius-full);
-
     color: var(--primary-500);
 }
 
 .btn-secondary:hover {
     background: var(--primary-500);
     color: var(--white);
+    transform: translateY(-2px);
 }
 
 .btn:focus-visible {
@@ -551,8 +534,8 @@ textarea.input {
 }
 
 /* =========================================================
-           RTL
-        ========================================================= */
+    RTL
+========================================================= */
 
 html[dir="rtl"] .membership-card {
     direction: rtl;
@@ -563,14 +546,11 @@ html[dir="rtl"] .section-title {
     flex-direction: row-reverse;
 }
 
-
-
 /* =========================================================
    SELECT STYLE
 ========================================================= */
 
 select.input {
-
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -579,48 +559,32 @@ select.input {
 }
 
 /* HIDE DEFAULT ARROW IN IE */
-
 select.input::-ms-expand {
     display: none;
 }
 
 select.input {
-    background-image:
-        linear-gradient(45deg, transparent 50%, var(--gray-500) 50%),
-        linear-gradient(135deg, var(--gray-500) 50%, transparent 50%);
-    background-position:
-        calc(100% - 22px) calc(50% - 3px),
-        calc(100% - 16px) calc(50% - 3px);
+    background-image: linear-gradient(45deg, transparent 50%, var(--gray-500) 50%), linear-gradient(135deg, var(--gray-500) 50%, transparent 50%);
+    background-position: calc(100% - 22px) calc(50% - 3px), calc(100% - 16px) calc(50% - 3px);
     background-size: 6px 6px;
     background-repeat: no-repeat;
 }
 
 html[dir="rtl"] select.input {
-    background-position:
-        20px calc(50% - 3px),
-        26px calc(50% - 3px);
+    background-position: 20px calc(50% - 3px), 26px calc(50% - 3px);
 }
 
-
-
 /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+    RESPONSIVE
+========================================================= */
 
 @media (max-width: 992px) {
-
     .membership-card {
         padding: var(--space-10);
     }
-
 }
 
 @media (max-width: 768px) {
-
-    .hero {
-        min-height: 420px;
-    }
-
     .membership-card {
         padding: var(--space-8);
     }
@@ -640,24 +604,7 @@ html[dir="rtl"] select.input {
 
 
 @media (max-width: 540px) {
-
-    .hero-title {
-        font-size: 2.7rem;
-    }
-
-    .hero-text {
-        font-size: 1rem;
-    }
-
     .membership-form {
         padding-block: var(--space-12);
     }
-}
-
-@media (max-width: 540px) {
-
-    .hero-content {
-        padding-inline: var(--space-4);
-    }
-
 }
