@@ -44,17 +44,18 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
-  margin: 0;
   border-radius: 10px;
   animation: slideDown 1s ease forwards;
+  
 }
 
 .hero-line2 {
   width: 100px;
   height: 8px;
-  background: #bf6901; /* خط خاکستری */
+  background-color: palevioletred;
   margin: 1rem auto;
   border-radius: 30px;
+ 
 }
 
 .hero-text {
@@ -62,11 +63,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
   color: #fff;
+  margin-bottom: 5%;
 }
-
-
-
-
 .hero-gradient {
   position: absolute;
   inset: 0;
@@ -84,8 +82,6 @@ body {
   text-align: center;
   color: #0a0101;
 }
-
-
 .card-section {
     margin-top: 10%;
 }
@@ -111,7 +107,6 @@ body {
   font-size: x-large;
  
 }
-
 .hero-title2 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -120,7 +115,7 @@ body {
   border-radius: 10px;
   animation: slideDown 1s ease forwards;
   text-align: center;
-  
+
 }
 .hero-text2 {
   font-size: 1.2rem;
@@ -140,10 +135,6 @@ body {
     opacity: 1;
   }
 }
-
-
-
-
 .cta-section h2 {
   font-size: 2.2rem;
   font-weight: bold;
@@ -165,8 +156,6 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-
 .btn {
   background: #ffffff; /* طلایی */
   color: #0a2540;
@@ -184,10 +173,6 @@ font-weight: bold;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-
-
-
-
 .cta-section {
   background: linear-gradient(
     to bottom right,
@@ -203,14 +188,6 @@ font-weight: bold;
   position: relative;
   overflow: hidden;
 }
-
-
-
-
-
-
-
-
 
 /* ===== مشترک برای index و partner ===== */
 .home-partners-grid,
@@ -298,6 +275,59 @@ font-weight: bold;
 }
 
 /* ===== ریسپانسیو ===== */
+/* =====  section one ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+
+    .hero-title {
+        font-size: var(--fs-h3);
+        padding-inline: var(--space-4);
+        margin-top: 20%;
+    }
+    .hero-text {
+        font-size: var(--fs-body);
+        padding-inline: var(--space-4);
+    }
+
+    .hero-line2 {
+        width: 60px;
+    }
+}
+/* خیلی کوچک (موبایل‌های ریز) */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 55vh;
+    }
+
+    .hero-title {
+        font-size: var(--fs-h4);
+    }
+
+    .hero-text {
+        font-size: var(--fs-small);
+    }
+}
+/* section two*/
+@media (max-width: 768px) {
+    
+    .hero-title2 {
+        font-size: var(--fs-h3);
+        padding-inline: var(--space-4);
+        margin-top: 20%;
+    }
+
+    .hero-text2 {
+        font-size: var(--fs-body);
+        padding-inline: var(--space-4);
+    }
+
+    .hero-line2 {
+        width: 60px;
+    }
+}
+
 @media (max-width: 992px) {
   .home-partners-grid,
   .partners-grid {
@@ -312,4 +342,42 @@ font-weight: bold;
     grid-template-columns: 1fr;
     padding: 0 16px;
   }
+}
+/* section three */
+/* موبایل */
+@media (max-width: 768px) {
+    .cta-section {
+        padding-block: var(--space-12);
+        padding-inline: var(--space-4);
+        border-radius: var(--radius-lg);
+        margin-bottom: 10%;
+    }
+
+    .cta-section h2 {
+        font-size: var(--fs-h4);
+    }
+
+    .cta-section p {
+        font-size: var(--fs-small);
+        margin-bottom: var(--space-6);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .cta-buttons .btn {
+        width: 100%;    
+    }
+}
+/* خیلی کوچک */
+@media (max-width: 480px) {
+    .cta-section h2 {
+        font-size: var(--fs-h5);
+    }
+
+    .cta-section p {
+        font-size: 0.85rem;
+    }
 }
