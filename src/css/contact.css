@@ -103,11 +103,6 @@
     --icon-font-size: 28px;
 }
 
-
-
-
-
-
 /* =========================================================
     RESET
 ========================================================= */
@@ -210,24 +205,15 @@ html[lang="fa"] h4 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 48px;
-
     padding-inline: var(--space-8);
-
     background: var(--primary-500);
     color: var(--text-white);
-
     border: none;
     border-radius: var(--radius-full);
-
     cursor: pointer;
-
     font-weight: 600;
-
-    transition:
-        background var(--transition-base),
-        transform var(--transition-base);
+    transition: background var(--transition-base), transform var(--transition-base);
 }
 
 .btn-primary:hover {
@@ -242,17 +228,11 @@ html[lang="fa"] h4 {
 .input {
     width: 100%;
     min-height: 56px;
-
     padding-inline: var(--space-4);
-
     border: 1px solid var(--border-medium);
     border-radius: var(--radius-md);
-
     background: var(--surface-primary);
-
-    transition:
-        border-color var(--transition-fast),
-        box-shadow var(--transition-fast);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .input:hover {
@@ -272,26 +252,21 @@ textarea.input {
 }
 
 /* =========================================================
-    CONTACT SECTION
-========================================================= */
-
-/* =========================================================
-    FULL WIDTH HERO
+   Contact HERO
 ========================================================= */
 
 .contact-section {
-    padding-top: 0;
+    padding: 0 0 var(--space-20);
     background: var(--surface-secondary);
     overflow: hidden;
 }
 
 /* HERO */
 
-.background-img {
-
+.hero {
     position: relative;
     width: 100%;
-    height: 600px;
+    min-height: 620px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -299,41 +274,42 @@ textarea.input {
     justify-content: center;
     text-align: center;
     padding-inline: var(--space-6);
-    margin: 0 0 var(--space-20) 0;
+    padding-top: var(--space-20);
+    margin-bottom: var(--space-20);
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.42),
             rgba(0, 0, 0, 0.42)),
-        url("./contact-hero.webp");
+        url("../assets/images/contact-hero.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 /* CONTENT */
-
-.background-img>* {
-
+.hero>* {
     position: relative;
     z-index: 2;
+    padding-inline: var(--space-6);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin-inline: auto;
 }
 
 /* TITLE */
 
-.background-img .contact-title {
-
+.hero .hero-title {
     color: var(--white);
-    font-size: clamp(3.5rem, 8vw, 6.5rem);
-    line-height: 1.1;
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
     margin-bottom: var(--space-4);
-    font-weight: 700;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 
 /* TEXT */
 
-.background-img .contact-text {
-
+.hero .hero-text {
     max-width: 760px;
     color: rgba(255, 255, 255, 0.92);
     font-size: clamp(1.1rem, 2vw, 2rem);
@@ -341,119 +317,35 @@ textarea.input {
     text-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
-/* LANGUAGE BUTTONS */
-
-.background-img .lang-switch {
-
-    margin-top: var(--space-8);
-}
-
-.background-img .lang-btn {
-
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--white);
-    backdrop-filter: blur(8px);
-    transition:
-        background var(--transition-base),
-        color var(--transition-base),
-        border-color var(--transition-base),
-        transform var(--transition-base);
-}
-
-.background-img .lang-btn:hover {
-
-    background: var(--white);
-    color: var(--primary-500);
-    border-color: var(--white);
-    transform: translateY(-2px);
-}
-
 /* =========================================================
-    RESPONSIVE
+    Contact Hero RESPONSIVE
 ========================================================= */
 
 @media (max-width: 992px) {
-    .background-img {
-        height: 540px;
+    .hero {
+        min-height: 540px;
     }
 }
 
 @media (max-width: 768px) {
-    .background-img {
-        height: 460px;
+    .hero {
+        min-height: 460px;
         padding-inline: var(--space-4);
-    }
-
-    .background-img .contact-title {
-        font-size: clamp(2.8rem, 9vw, 4.5rem);
-    }
-
-    .background-img .contact-text {
-        font-size: 1.05rem;
-    }
-
-    .background-img::after {
-        width: 90px;
     }
 }
 
 @media (max-width: 540px) {
-    .background-img {
-        height: 400px;
+    .hero {
+        min-height: 400px;
     }
 
-    .background-img .contact-text {
+    .hero .hero-text {
         max-width: 95%;
     }
-}
 
-.contact-heading {
-    max-width: 760px;
-    margin-inline: auto;
-}
-
-.contact-title {
-    font-size: var(--fs-h1);
-    color: var(--primary-500);
-    margin-bottom: var(--space-6);
-}
-
-.contact-text {
-    max-width: 680px;
-    margin-inline: auto;
-    color: var(--text-secondary);
-    font-size: var(--fs-body-lg);
-}
-
-/* =========================================================
-    LANGUAGE SWITCH
-========================================================= */
-
-.lang-switch {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-4);
-    margin-top: var(--space-8);
-}
-
-.lang-btn {
-    width: 92px;
-    height: 48px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--border-medium);
-    background: var(--surface-primary);
-    color: var(--primary-500);
-    cursor: pointer;
-    font-weight: 600;
-    transition: all var(--transition-base);
-}
-
-.lang-btn:hover,
-.lang-btn.active {
-    background: var(--primary-500);
-    border-color: var(--primary-500);
-    color: var(--white);
+    .hero-content {
+        padding-inline: var(--space-4);
+    }
 }
 
 /* =========================================================
@@ -559,7 +451,7 @@ textarea.input {
 
 .map-wrapper iframe {
     width: 100%;
-    height: 260px;
+    height: 251px;
     border: none;
 }
 
@@ -571,7 +463,6 @@ html[dir="rtl"] .contact-card {
     direction: rtl;
     text-align: right;
 }
-
 
 html[dir="rtl"] .contact-content {
     direction: rtl;
@@ -610,7 +501,6 @@ html[dir="ltr"] .contact-content {
 /* TABLET */
 
 @media (max-width: 992px) {
-
     .contact-layout {
         grid-template-columns: 380px 1fr;
         gap: var(--space-6);
@@ -622,7 +512,7 @@ html[dir="ltr"] .contact-content {
 
     .map-wrapper iframe {
         width: 100%;
-        height: 400px;
+        height: 395px;
         border: none;
     }
 }
@@ -630,7 +520,6 @@ html[dir="ltr"] .contact-content {
 /* MOBILE */
 
 @media (max-width: 768px) {
-
     .contact-layout {
         grid-template-columns: 1fr;
     }
@@ -642,9 +531,6 @@ html[dir="ltr"] .contact-content {
     .contact-form-wrapper {
         padding: var(--space-5);
     }
-}
-
-@media (max-width: 576px) {
 
     .btn-primary {
         width: 100%;
