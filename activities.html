@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delaram | services</title>
-  <!-- google font links -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Google Material Icons -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delaram | activites</title>
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+     <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <!-- css links -->
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/services.css">
+   
+    <!-- css links -->
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/activities.css">
 
 </head>
+<body>
+    <!-- ============== Jamila Haydari  page ==============  -->
 
-<!-- ============== Marzeia haydari  page ==============  -->
+   <body>
 
-
-<body class="bg-gray-50 font-sans antialiased"></body>
-
-<!--navbar-section -->
+<!-- navbar-section -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <!-- لوگو -->
@@ -76,65 +73,66 @@
   </div>
 </nav>
 
-
-
-<!--section-one-->
-<section class="hero-section">
-  <img src="./src/assets/images/services-hero.webp" alt="Background" class="hero-bg">
-  <div class="hero-gradient"></div>
-  <div class="hero-overlay">
-    <h2 class="hero-title" data-i18n="services_hero_title">Empowering Communities</h2>
+  <section class="services-section">
+    <h2 class="section-title">Our Activities</h2>
     <div class="hero-line"></div>
-    <p class="hero-text" data-i18n="services_hero_text">
-      Join us in building sustainable foundations for the future of Afghanistan.
-    </p>
-  </div>
-</section>
+    <p style="text-align: center; margin-bottom: 65px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolorem et explicabo saepe magnam.</p>
+    <div class="services-grid">
+
+    <!-- کارت ها با داینامیک ساخته شده -->
+
+    <div class="container grid grid-3 gap-6" id="cards-container">
+    </div>
 
 
-<!--  section-two-->
-<section class="services-section">
-  <h2 class="section-title" data-i18n="services_title">Our Services</h2>
-  <div class="hero-line"></div>
-  <p style="text-align: center; margin-bottom: 65px;" data-i18n="services_intro">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolorem et explicabo saepe magnam,
-    ipsam ad sunt iste perferendis <br>sit quia quo iusto itaque illo veritatis officiis repellendus quis reprehenderit.
-  </p>
-  <div class="services-grid"></div>
+     <div class="language-switch" style="text-align:center; margin-top:50px;">
+      <button id="btn-en" style="margin:0 10px; padding:8px 16px; border-radius:6px; border:1px solid #b77503; cursor:pointer;">
+        English
+      </button>
+      <button id="btn-fa" style="margin:0 10px; padding:8px 16px; border-radius:6px; border:1px solid #cc7b01; cursor:pointer;">
+        دری
+      </button>
+    </div>
+  </section>
+
+    <section class="hero-section">
+        <img src="./src/assets/images/activity-hero.png" alt="Background" class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-overlay">
+            <h2 class="hero-title">Activities Pages</h2>
+            <div class="hero-line"></div>
+            <p class="hero-text">Join us in building sustainable foundations for the future of Afghanistan.</p>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <h2 class="section-title">Our Activities</h2>
+        <div class="hero-line"></div>
+        <p style="text-align: center; margin-bottom: 65px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <div id="cards-container"></div>
+
+        <div style="text-align:center; margin-top:50px;">
+            <button id="btn-en" onclick="localStorage.setItem('lang','en'); renderActivities();" style="margin:0 10px; padding:8px 16px; border-radius:6px; border:1px solid #b77503; cursor:pointer;">
+                English
+            </button>
+            <button id="btn-fa" onclick="localStorage.setItem('lang','fa'); renderActivities();" style="margin:0 10px; padding:8px 16px; border-radius:6px; border:1px solid #cc7b01; cursor:pointer;">
+                دری
+            </button>
+        </div>
+    </section>
 
 
-  <!-- کارت‌ها با JS ساخته می‌شوند -->
-  <div class="container grid grid-3 gap-6" id="cards-container">
-  </div>
-</section>
-
-
-
-<!-- این بخش Join us است -->
-<section class="cta-section">
-  <h2 data-i18n="cta_title">Ready to Make a Difference?</h2>
-  <p data-i18n="cta_text">
-    Join us in our mission to empower communities and build sustainable foundations for the future of Afghanistan.
-  </p>
-  <div class="cta-buttons">
-    <a href="contact.html" class="btn" data-i18n="cta_contact">Contact Us →</a>
-    <a href="support.html" class="btn-alt" data-i18n="cta_support">Support Our Work →</a>
-  </div>
-</section>
-
-
-
-<!-- فوتر -->
+     <!-- فوتر -->
 <footer class="footer-section">
   <div class="footer-container">
     <!-- سمت چپ: Support Us و توضیحات -->
     <div class="footer-brand fade-in-up stagger-1">
       <div class="footer-logo">
-        <img src="./src/assets/images/Dalarm logo.webp" alt="ECAO Logo" class="footer-logo-img">
-
+        <img src="./src/images/Dalarm logo.webp" alt="ECAO Logo" class="footer-logo-img">
+        
       </div>
-      <p data-i18n="footer_description">ECAO is dedicated to creating positive change through community empowerment
-        and sustainable development.</p>
+      <p data-i18n="footer_description">ECAO is dedicated to creating positive change through community empowerment and sustainable development.</p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook">f</a>
         <a href="#" aria-label="Donate">♡</a>
@@ -173,14 +171,10 @@
   </div>
 </footer>
 
+<!-- دکمه بازگشت به بالا -->
+<button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
 
-<!--button-backToTop-->
-<button id="backToTopBtn" class="back-to-top" data-i18n="back_top">↑</button>
 
-
-<!-- end code -->
-<script src="./src/js/main.js" defer></script>
-<script src="./src/js/services.js" defer></script>
+    <script src="./src/js/activities.js"></script>
 </body>
-
 </html>

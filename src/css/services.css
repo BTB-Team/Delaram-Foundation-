@@ -1,1 +1,253 @@
-/*============== services page css styles ==============*/
+/* =========================================================
+   SERVICES PAGE CSS STYLES
+========================================================= */
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+:root {
+  --primary-500: #163a5f;
+  --accent-pink-500: #e84d8a;
+  --white: #fff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-900: #0f172a;
+  --background: var(--white);
+  --surface-primary: var(--white);
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-muted: var(--gray-500);
+  --font-fa: "Vazirmatn", sans-serif;
+  --font-en: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   BASE STYLES
+========================================================= */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero-section {
+  position: relative;
+  height: 780px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  border-radius: 10px;
+  animation: slideDown 1s ease forwards;
+}
+
+.hero-line {
+  width: 60px;
+  height: 3px;
+  background: #bf6901;
+  margin: 1rem auto;
+}
+
+.hero-text {
+  font-size: 1.6rem;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #0a2540;
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+.cta-section {
+  background: linear-gradient(to bottom right,
+      #0a2540,
+      #00406d,
+      #0a2540);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  border-radius: 0rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #ffffff;
+  color: #0a2540;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #f7f7f7;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-alt {
+  background: #00b3ff;
+  color: #ffffff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-alt:hover {
+  background: #00bdec;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   SERVICES CARDS
+========================================================= */
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* DESKTOP */
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  #cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  #cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .service-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* MOBILE SMALL */
+@media (max-width: 480px) {
+  #cards-container {
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+
+  .services-section {
+    padding: 2rem 0.5rem;
+  }
+}

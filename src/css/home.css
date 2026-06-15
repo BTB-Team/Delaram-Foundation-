@@ -1,1 +1,938 @@
-/*============== home page css styles ==============*/
+/*============== services page css styles ==============*/
+
+:root {
+  --primary-500:#163a5f;
+  --primary-600:#0f2c4a;
+  --text-white:#fff;
+  --text-primary:#0f172a;
+  --text-secondary:#475569;
+  --border-light:#e2e8f0;
+  --shadow-md:0 8px 24px rgba(15,23,42,.06);
+  --shadow-lg:0 20px 48px rgba(15,23,42,.1);
+  --radius-xl:1.5rem;
+  --space-6:1.5rem;
+  --space-8:2rem;
+  --transition-base:300ms ease;
+}
+
+
+
+
+/*section2 اولی*/
+
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.overlay h2 {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: aliceblue;
+  background: none;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.overlay p {
+  font-size: 1.6rem;
+  color: #d8d8d8;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.4;
+}
+
+
+.btn-primary {
+  background: #C93A72;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #936201;
+  transform: translateY(-2px);
+}
+
+/* جابجایی دکمه‌ها کمی بالا */
+.swiper-button-next,
+.swiper-button-prev {
+  background: #C93A72;
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* افزودن این خطوط برای بالا بردن دکمه‌ها */
+  top: 37%; /* مقدار دلخواه، می‌توانید تغییر دهید */
+  position: absolute; /* اطمینان حاصل کنید که position فعال است */
+  z-index: 10; /* برای اطمینان از قرار گرفتن روی محتوا */
+}
+
+/* اگر نیاز دارید، می‌توانید از transform برای تنظیم بهتر استفاده کنید */
+.swiper-button-next {
+  right: 10px; /* یا مقدار دلخواه */
+  transform: translateY(-20%); /* کمی بالا بردن */
+}
+
+.swiper-button-prev {
+  left: 10px; /* یا مقدار دلخواه */
+  transform: translateY(-20%); /* کمی بالا بردن */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.5rem; /* علامت داخل کوچک‌تر */
+}
+
+
+
+
+
+
+
+
+/*section1 دومی*/
+.section1 {padding: 75px; /* پیش‌فرض برای لپ‌تاپ و تبلت */}
+
+/* در موبایل padding حذف شود */
+@media (max-width: 768px) { .section1 {padding: 30px;}}
+
+@media (max-width: 768px) {.h3 {font-size: 32px;}}
+
+@media (max-width: 768px) {.h2 { font-size: 1px; }}
+
+
+h2 {
+  font-size: 1.0rem;
+  background: rgba(48, 48, 48, 0.15);
+  border-radius: 30px;
+  padding: 0.7rem 1rem;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--text-secondary);}
+
+h2, h3, p, .btn-primary, .img {margin-top: 15px;}
+
+.img {
+  max-width: 95%;
+  border-radius: var(--radius-xl);
+  margin-top: 90px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border: 5px solid #fff; /* border سفید */}
+
+
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 36px;
+  background-color: #f5f5f5; /* رنگ پس‌زمینه */
+  padding: 40px 20px;
+  width: 100%;              /* کل عرض */}
+
+
+.section-purpose {
+  background-color: #f5f5f5; /* رنگ دلخواه */
+  width: 100%;              /* کل عرض parent */
+  box-sizing: border-box;    /* مطمئن می‌شود padding به عرض اضافه نشود */}
+
+
+
+
+.purpose-section h1 {
+  font-size: 50px;
+  color: #000;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.purpose-section .underline {
+  width: 60px; /* طول خط */
+  height: 4px; /* ضخامت خط */
+  background-color: #e497b6; /* رنگ خط (tan) */
+  margin: 8px auto 0; /* فاصله از متن و وسط‌چین */
+}
+
+
+
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  width: 65%;
+  height: 230px;
+  margin: 0 auto;
+  padding: 50px; /* لپ‌تاپ و تبلت */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.card h3 .material-icons {
+  color: #fff;
+  background:#0085fa;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 36px;
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover h3 .material-icons {
+  background:#368fe7;
+  transform: scale(1.1);
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background:#e7367d;
+  color: var(--text-white);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+.btn-primary:hover {
+  background:#e7367d;
+  transform: translateY(-2px);
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .parent {
+    padding: 0;
+  }
+
+  .card {
+    padding: 14px; /* همان اندازه‌ای که خودتان دادید */
+    height: auto; /* ارتفاع منعطف‌تر برای موبایل */
+  }
+
+  .card h3 {
+    font-size: 1.1rem; /* کوچکتر از لپ‌تاپ */
+  }
+
+  .card h3 .material-icons {
+    font-size: 28px; /* کوچکتر از لپ‌تاپ */
+    padding: 8px;
+  }
+
+  .card p {
+    font-size: 0.9rem; /* متن کوچکتر */
+    line-height: 1.4;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem; /* دکمه کوچکتر */
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+
+
+/* ===== latest-services-section ===== */
+.latest-services {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.latest-services .Parent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.latest-services .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.latest-services .section-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #009fe3, #e7367d);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+#home-services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home-service-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.home-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 159, 227, 0.2);
+}
+
+.home-service-card .home-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.home-service-card .home-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-service-card:hover .home-card-img img {
+  transform: scale(1.1);
+}
+
+.home-service-card .home-card-body {
+  padding: 1.5rem;
+}
+
+.home-service-card .home-card-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.home-service-card .home-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.home-service-card .home-card-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.home-service-card .read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #009fe3, #0284c7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-service-card .read-more-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  transform: translateX(4px);
+}
+
+.view-all-btn-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-view-all {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #ff67a4, #c4346d);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-view-all:hover {
+  background: linear-gradient(135deg, #ff67a4, #c4346d);
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* ===== استایل مشترک برای Services و Blog ===== */
+.latest-services,
+.latest-blog-posts {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f5fffe 100%);
+}
+
+.latest-services .Parent-container,
+.latest-blog-posts .Parent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.latest-services .section-title,
+.latest-blog-posts .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.latest-services .section-underline,
+.latest-blog-posts .section-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff67a4, #c4346d);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+#home-services-container,
+#home-posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== استایل کارت‌های سرویس ===== */
+.home-service-card,
+.home-post-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.home-service-card:hover,
+.home-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 159, 227, 0.2);
+}
+
+.home-service-card .home-card-img,
+.home-post-card .home-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.home-service-card .home-card-img img,
+.home-post-card .home-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-service-card:hover .home-card-img img,
+.home-post-card:hover .home-card-img img {
+  transform: scale(1.1);
+}
+
+.home-service-card .home-card-body,
+.home-post-card .home-card-body {
+  padding: 1.5rem;
+}
+
+.home-service-card .home-card-tag,
+.home-post-card .home-card-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.home-service-card .home-card-title,
+.home-post-card .home-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.home-service-card .home-card-desc,
+.home-post-card .home-card-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.home-service-card .read-more-btn,
+.home-post-card .read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #009fe3, #0284c7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-service-card .read-more-btn:hover,
+.home-post-card .read-more-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  transform: translateX(4px);
+}
+
+.view-all-btn-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-view-all {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #ff67a4, #c4346d);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-view-all:hover {
+  background: linear-gradient(135deg, #ff67a4, #c4346d);
+  transform: scale(1.05);
+}
+
+/* نمایش/مخفی کردن متن‌ها بر اساس زبان */
+.en-only {
+  display: inline;
+}
+
+.fa-only {
+  display: none;
+}
+
+[dir="rtl"] .en-only {
+  display: none;
+}
+
+[dir="rtl"] .fa-only {
+  display: inline;
+}
+
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: none;
+  padding: 0;
+}
+
+
+
+
+
+/*blog-posts-section */
+.latest-blog-posts {
+  padding: 4rem 2rem;
+  background: #ffffff;
+}
+
+.Parent-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a2342;
+  margin-bottom: 1rem;
+}
+
+.section-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg,#009fe3 , #c4346d
+);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+/* ===== کانتینر کارت‌ها ===== */
+#home-posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+/* ===== کارت پست ===== */
+.home-post-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.home-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== تصویر کارت ===== */
+.home-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.home-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-post-card:hover .home-card-img img {
+  transform: scale(1.1);
+}
+
+/* ===== محتوای کارت ===== */
+.home-card-body {
+  padding: 1.5rem;
+}
+
+.home-card-tag {
+  display: inline-block;
+  background: #009fe3
+;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.home-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #0a2342
+;
+  line-height: 1.4;
+}
+
+.home-card-desc {
+  color: #666;
+  line-height: 1.6;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* ===== دکمه Read More ===== */
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background:  #c4346d;
+;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.read-more-btn:hover {
+  background:#ff67a4
+;
+}
+
+.read-more-btn .material-icons {
+  font-size: 18px;
+}
+
+/* ===== دکمه مشاهده همه ===== */
+.view-all-btn-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-view-all {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background:  #c4346d
+;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-view-all:hover {
+  background: #c4346d
+;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+/* ===== ریسپانسیو برای تبلت ===== */
+@media (max-width: 992px) {
+  #home-posts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== ریسپانسیو برای موبایل ===== */
+@media (max-width: 768px) {
+  #home-posts-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* ===== نمایش/مخفی کردن متن‌های دوزبانه ===== */
+.en-only {
+  display: inline;
+}
+
+.fa-only {
+  display: none;
+}
+
+[dir="rtl"] .en-only {
+  display: none;
+}
+
+[dir="rtl"] .fa-only {
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+/*partners-section */
+.home-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 30px;
+  padding: 0 40px;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.partner-card {
+  width: 100%;
+  margin: 0;
+  padding: 24px 18px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+}
+
+.partner-card__icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #f7f9fc;
+  border: 2px solid #e8eef6;
+}
+
+.partner-card__icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.partner-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1f2a44;
+}
+
+.partner-card__description {
+  font-size: 0.9rem;
+  color: #5f6b7a;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.partner-card__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eaf8ef;
+  color: #2f8f4e;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .home-partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-partners-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+}
+
+
+
+
+
+
+
+
+/* فاصله از چپ و راست صفحه */
+.latest-partners .Parent-container {
+  padding-left: 140px;
+  padding-right: 100px;
+  box-sizing: border-box;
+}
+
+/* فاصله بیشتر عنوان Latest Partners از بالا */
+.latest-partners .section-title {
+  margin-top: 50px;
+}
+
+/* اگر خواستی خود کارت‌ها هم کمی از بالا فاصله بگیرند */
+.latest-partners .home-partners-grid {
+  margin-top: 10px;
+}
