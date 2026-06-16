@@ -5,15 +5,11 @@ body {
   background-color: #f9fafb;
   color: #333;
 }
-
-
-
 .hero-section {
   position: relative;
   height: 780px;
   overflow: hidden;
 }
-
 .hero-bg {
   width: 100%;
   height: 100%;
@@ -27,7 +23,6 @@ body {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
-
 /* متن روی عکس */
 .hero-overlay {
   position: absolute;
@@ -45,19 +40,15 @@ body {
   font-weight: bold;
   color: #ffffff;
   border-radius: 10px;
-  animation: slideDown 1s ease forwards;
-  
+  animation: slideDown 1s ease forwards; 
 }
-
 .hero-line2 {
   width: 100px;
   height: 8px;
   background-color: palevioletred;
   margin: 1rem auto;
   border-radius: 30px;
- 
 }
-
 .hero-text {
   font-size: 1.5rem;
   max-width: 600px;
@@ -70,7 +61,6 @@ body {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
-
 /* متن روی عکس */
 .hero-overlay {
   position: absolute;
@@ -90,14 +80,12 @@ body {
   margin-bottom: 5%;
   margin-top: 0;
 }
-
 .English {
   padding: 10px 30px;
   border-radius: 20px;
   border-color: #00406d;
   background-color: white;
     font-size: x-large;
-
 }
 .farsi {
   padding: 10px 30px;
@@ -105,7 +93,7 @@ body {
   border-color: #00406d;
   background-color: white;
   font-size: x-large;
- 
+
 }
 .hero-title2 {
   font-size: 2.5rem;
@@ -141,7 +129,6 @@ body {
   margin-bottom: 1rem;
   color: #fff;
 }
-
 .cta-section p {
   max-width: 600px;
   margin: 0 auto 2rem;
@@ -149,7 +136,6 @@ body {
   line-height: 1.6;
   color: #e0e0e0;
 }
-
 .cta-buttons {
   display: flex;
   justify-content: center;

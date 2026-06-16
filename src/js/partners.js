@@ -27,6 +27,8 @@ const partnerCardsData = [
     descriptionDr: "همکاری برای تقویت جوامع و ایجاد تاثیر ماندگار.",
     statusEn: "Active partner",
     statusDr: "همکار فعال"
+}
+    ];
 
 
 
@@ -98,7 +100,7 @@ const partnersTranslations = {
 /* =========================================================
    RENDER PARTNER CARDS
  =========================================================*/
-}
+
 
 const partnerCardsData = [
   {
@@ -192,6 +194,8 @@ window.addEventListener("languageChanged", function(e) {
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "en";
   changePartnersLanguage(savedLang);
+});
+
 function renderHomePartnerCards(lang = "en") {
   renderPartnersCards("home-partners-container", lang);
 }
@@ -201,6 +205,8 @@ function renderPartnersPageCards(lang = "en") {
 }
 
 window.addEventListener("load", () => {
-  renderHomePartnerCards("en");
-  renderPartnersPageCards("en");
+  const savedLang = localStorage.getItem("lang") || "en";
+
+  renderHomePartnerCards(savedLang);
+  renderPartnersPageCards(savedLang);
 });
